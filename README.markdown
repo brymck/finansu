@@ -1,7 +1,7 @@
 FinAnSu aims to provide user-friendly tools for use in financial applications. The add-in is in its development stages,
 but it currently offers:
 
-  * **Live, streaming [web import](http://code.google.com/p/finansu/wiki/WebData capabilities)** (Excel 2002+), including
+  * Live, streaming [web import](http://code.google.com/p/finansu/wiki/WebData capabilities) (Excel 2002+), including
     custom functions for easily [importing security prices](http://code.google.com/p/finansu/wiki/Quotes) from
     Bloomberg.com, Google Finance and Yahoo! Finance
   * Functions that can [parse CSVs](http://code.google.com/p/finansu/wiki/WebData#ImportCSV on the web, including
@@ -18,4 +18,4 @@ but it currently offers:
   * Some formatting macros for [currencies](http://code.google.com/p/finansu/wiki/Currencies) and
     [a few layout options](http://code.google.com/p/finansu/wiki/Layout) that aren't easily accessible in Excel
 
-![FinAnSu in action](http://finansu.googlecode.com/hg/img/quote.gif "FinAnSu in action")
+[FinAnSu in action](http://finansu.googlecode.com/hg/img/quote.gif "FinAnSu in action")
