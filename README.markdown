@@ -1,3 +1,6 @@
+FinAnSu
+=======
+
 FinAnSu aims to provide user-friendly tools for use in financial applications. The add-in is in its development stages,
 but it currently offers:
 
