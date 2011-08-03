@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" loadImage="LoadImage">
+  <ribbon>
+    <tabs>
+      <tab id="FinAnSuTab" label="FinAnSu" keytip="S">
+        <group id="ImportGroup" label="Web Import">
+          <menu id="QuoteMenu" label="Quote" keytip="Q" imageMso="GetExternalDataFromWeb" size="large">
+            <button id="QuoteButton" label="&amp;Quote" onAction="FunctionsClick" tag="Quote" />
+            <button id="LiveQuoteButton" label="&amp;LiveQuote" onAction="FunctionsClick" tag="LiveQuote" />
+            <menuSeparator id="QuoteSeparator" />
+            <button id="BloombergButton" label="&amp;Bloomberg Quote" onAction="FunctionsClick" tag="BloombergQuote" />
+            <button id="GoogleButton" label="&amp;Google Quote" onAction="FunctionsClick" tag="GoogleQuote" />
+            <button id="YahooButton" label="&amp;Yahoo! Quote" onAction="FunctionsClick" tag="YahooQuote" />
+            <menuSeparator id="QuoteParamsSeparator" />
+            <button id="QuoteParamsButton" label="Quote&amp;Params" onAction="FunctionsClick" tag="QuoteParams" />
+          </menu>
+          <menu id="QuoteHistoryMenu" label="Quote History" keytip="U" imageMso="TableOfContentsGallery" size="large">
+            <button id="QuoteHistoryButton" label="&amp;Quote History" onAction="FunctionsClick" tag="QuoteHistory" />
+            <menuSeparator id="QuoteHistorySeparator" />
+            <button id="GoogleHistoryButton" label="&amp;Google History" onAction="FunctionsClick" tag="GoogleHistory" />
+            <button id="YahooHistoryButton" label="&amp;Yahoo! History" onAction="FunctionsClick" tag="YahooHistory" />
+            <menuSeparator id="WebSeparator" />
+            <button id="H15HistoryButton" label="&amp;H.15 History" onAction="FunctionsClick" tag="H15History" />
+            <menuSeparator id="QuoteHistoryParamsSeparator" />
+            <button id="QuoteHistoryParamsButton" label="QuoteHistory&amp;Params" onAction="FunctionsClick" tag="QuoteHistoryParams" />
+          </menu>
+          <menu id="WebMenu" label="Web" keytip="W" imageMso="HyperlinkInsert" size="large">
+            <button id="ImportButton" label="&amp;Import" onAction="FunctionsClick" tag="Import" />
+            <button id="ImportCSVButton" label="Import &amp;CSV" onAction="FunctionsClick" tag="ImportCSV" />
+          </menu>
+        </group>
+        <group id="FinancialGroup" label="Financial Instruments">
+          <menu id="SimpleOptionsMenu" label="Simple Options" keytip="S" imageMso="AutoSum" size="large">
+            <button id="BlackScholesButton" label="&amp;Black-Scholes" onAction="FunctionsClick" tag="BlackScholes" />
+            <menuSeparator id="BlackScholesSeparator" />
+            <button id="DeltaButton" label="&amp;Delta" onAction="FunctionsClick" tag="BSDelta" />
+            <button id="GammaButton" label="&amp;Gamma" onAction="FunctionsClick" tag="Gamma" />
+            <button id="ThetaButton" label="&amp;Theta" onAction="FunctionsClick" tag="Theta" />
+            <button id="VegaButton" label="&amp;Vega" onAction="FunctionsClick" tag="Vega" />
+            <button id="RhoButton" label="&amp;Rho" onAction="FunctionsClick" tag="Rho" />
+            <menuSeparator id="GreeksOrderSeparator" />
+            <button id="VannaButton" label="V&amp;anna" onAction="FunctionsClick" tag="Vanna" />
+            <button id="CharmButton" label="&amp;Charm" onAction="FunctionsClick" tag="Charm" />
+            <button id="SpeedButton" label="&amp;Speed" onAction="FunctionsClick" tag="Speed" />
+            <button id="ZommaButton" label="&amp;Zomma" onAction="FunctionsClick" tag="Zomma" />
+            <button id="ColorButton" label="C&amp;olor" onAction="FunctionsClick" tag="Color" />
+            <button id="DvegaDtimeButton" label="Dv&amp;egaDtime" onAction="FunctionsClick" tag="DvegaDtime" />
+            <button id="VommaButton" label="Vo&amp;mma" onAction="FunctionsClick" tag="Vomma" />
+            <button id="DualDeltaButton" label="D&amp;ual Delta" onAction="FunctionsClick" tag="DualDelta" />
+            <button id="DualGammaButton" label="Dua&amp;l Gamma" onAction="FunctionsClick" tag="DualGamma" />
+          </menu>
+          <menu id="ComplexOptionsMenu" label="Complex Options" keytip="X" imageMso="SymbolInsert" size="large">
+            <button id="AmericanButton" label="&amp;American (Barone-Adesi-Whaley)" onAction="FunctionsClick" tag="American" />
+            <button id="AmericanBinomialButton" label="&amp;American Binomial" onAction="FunctionsClick" tag="AmericanBinomial" />
+            <button id="BermudanBinomialButton" label="&amp;Bermudan Binomial" onAction="FunctionsClick" tag="BermudanBinomial" />
+          </menu>
+          <menu id="YieldCurveMenu" label="Yield Curves" keytip="Y" imageMso="ChartTrendline">
+            <button id="ContinuousInterpolationButton" label="&amp;Continuous Interpolation" onAction="FunctionsClick" tag="ContinuousInterpolation" />
+            <button id="CubicSplineButton" label="C&amp;ubic Spline" onAction="FunctionsClick" tag="CubicSpline" />
+            <button id="StubButton" label="&amp;Spot Stub" onAction="FunctionsClick" tag="Stub" />
+          </menu>
+          <menu id="FRAsMenu" label="FRAs" keytip="F" imageMso="DiagramReverseClassic">
+            <button id="FRAButton" label="&amp;FRA" onAction="FunctionsClick" tag="FRA" />
+            <button id="FRAFromFXLongButton" label="&amp;FRA from FX Long" onAction="FunctionsClick" tag="FRAFromFXLong" />
+            <button id="FRAFromFXShortButton" label="&amp;FRA from FX Short" onAction="FunctionsClick" tag="FRAFromFXShort" />
+          </menu>
+        </group>
+        <group id="FormattingGroup" label="Formatting">
+          <!--
+          <menu id="ThemesGroup" label="Theme" imageMso="AppointmentColorDialog" keytip="T" size="large">
+            <button id="HeaderButton" label="&amp;Header" onAction="ThemesGetClick" tag="Header" />
+            <button id="NormalButton" label="&amp;Normal" onAction="ThemesGetClick" tag="Normal" />
+            <button id="ColumnHeader" label="&amp;ColumnHeader" onAction="ThemesGetClick" tag="ColumnHeader" />
+            <menu id="ThemesSetMenu" label="&amp;Set">
+              <button id="SetHeaderButton" label="&amp;Header" onAction="ThemesSetClick" tag="Header" />
+              <button id="SetNormalButton" label="&amp;Normal" onAction="ThemesSetClick" tag="Normal" />
+              <button id="SetColumnHeader" label="&amp;ColumnHeader" onAction="ThemesSetClick" tag="ColumnHeader" />
+            </menu>
+            <menu id="ThemesLoadMenu" label="&amp;Load Theme">
+              <button id="LoadDefaultButton" label="Default" onAction="ThemesLoadClick" tag="Default" />
+            </menu>
+            <menuSeparator id="ThemesNewSeparator" />
+            <button id="ThemesNewButton" label="New Theme..." onAction="ThemesNewButton_Click" />
+          </menu>
+          -->
+          <menu id="CurrenciesMenu" label="Currencies" imageMso="FunctionsFinancialInsertGallery" keytip="C" size="large">
+            <button id="WholeFormatButton" label="# &amp;Whole number" onAction="FormatsClick" tag="WholeFormat" />
+            <button id="TwoDecimalsFormatButton" label="# &amp;Two decimal places" onAction="FormatsClick" tag="TwoDecimalsFormat" />
+            <button id="FourDecimalsFormatButton" label="# &amp;Four decimal places" onAction="FormatsClick" tag="FourDecimalsFormat" />
+            <menuSeparator id="DecimalDollarSeparator" />
+            <button id="DollarsFormatButton" label="$ &amp;Dollars" onAction="FormatsClick" tag="DollarsFormat" />
+            <button id="DollarsCentsFormatButton" label="$ Dollars and &amp;cents" onAction="FormatsClick" tag="DollarsCentsFormat" />
+            <menuSeparator id="DollarEuroSeparator" />
+            <button id="EurosFormatButton" label="€ &amp;Euros" onAction="FormatsClick" tag="EurosFormat" />
+            <button id="EurosCentsFormatButton" label="€ E&amp;uros and cents" onAction="FormatsClick" tag="EurosCentsFormat" />
+            <menuSeparator id="EuroYenSeparator" />
+            <button id="YenFormatButton" label="¥ &amp;Yen" onAction="FormatsClick" tag="YenFormat" />
+            <button id="YenSenFormatButton" label="¥ Yen and &amp;sen" onAction="FormatsClick" tag="YenSenFormat" />
+            <menuSeparator id="YenPoundSeparator" />
+            <button id="PoundsFormatButton" label="£ &amp;Pounds" onAction="FormatsClick" tag="PoundsFormat" />
+            <button id="PoundsPenceFormatButton" label="£ P&amp;ounds and pence" onAction="FormatsClick" tag="PoundsPenceFormat" />
+          </menu>
+          <menu id="LayoutMenu" label="Layout" imageMso="FunctionsTextInsertGallery" keytip="L" size="large">
+            <button id="AccountingUnderlineButton" label="&amp;Accounting Underline" onAction="FormatsClick" tag="AccountingUnderline" />
+            <button id="CenterAcrossButton" label="&amp;Center Across Selection" onAction="FormatsClick" tag="CenterAcross" />
+          </menu>
+          <menu id="ColorsMenu" label="Colors" keytip="O" imageMso="GroupSmartArtQuickStyles">
+            <button id="RGBToHexButton" label="&amp;RGB to Hexadecimal" onAction="FunctionsClick" tag="RGBToHex" />
+            <button id="RGBToHSVButton" label="R&amp;GB to HSV" onAction="FunctionsClick" tag="RGBToHSV" />
+            <button id="HexToRGBButton" label="&amp;Hexadecimal to RGB" onAction="FunctionsClick" tag="HexToRGB" />
+            <button id="HexToHSVButton" label="H&amp;exadecimal to HSV" onAction="FunctionsClick" tag="HexToHSV" />
+            <button id="HSVToRGBButton" label="H&amp;SV to RGB" onAction="FunctionsClick" tag="HSVToRGB" />
+            <button id="HSVToHexButton" label="HS&amp;V to Hexadecimal" onAction="FunctionsClick" tag="HSVToHex" />
+          </menu>
+          <menu id="OtherMenu" label="Other" keytip="R" imageMso="MacroNames">
+            <button id="AutoSortButton" label="&amp;AutoSort" onAction="FunctionsClick" tag="AutoSort" />
+            <button id="DLookupButton" label="&amp;DLookup" onAction="FunctionsClick" tag="DLookup" />
+            <button id="NoErrorButton" label="&amp;No Error" onAction="FunctionsClick" tag="NoError" />
+            <button id="RollDiceButton" label="&amp;Roll Dice" onAction="FunctionsClick" tag="RollDice" />
+            <button id="WeightedAverageButton" label="&amp;Weighted Average" onAction="FunctionsClick" tag="WeightedAverage" />
+          </menu>
+          <!--
+          <menu id="FormatMenu" label="Format" keytip="F" imageMso="AppointmentColorDialog" size="large" itemSize="large">
+            <menu id="TestMenu" label="Test Menu" enabled="true">
+              <button id="TestButton" label="test" />
+            </menu>
+            <button id="TitleButton" label="Title" imageMso="QuickPartsInsertGallery" />
+            <button id="HeaderButton" label="Header" />
+            <button id="TotalButton" label="Total Row" />
+          </menu>
+          -->
+        </group>
+        <group id="AboutGroup" label="About">
+          <menu id="VersionMenu" label="Version Info" keytip="V" imageMso="ReviewCompareMajorVersion" size="large">
+            <button id="LatestVersionButton" label="&amp;Latest Version" onAction="FunctionsClick" tag="LatestVersion" />
+            <button id="InstalledVersionButton" label="&amp;Installed Version" onAction="FunctionsClick" tag="InstalledVersion" />
+            <button id="UpdateAvailableButton" label="&amp;Update Available" onAction="FunctionsClick" tag="UpdateAvailable" />
+          </menu>
+          <button id="HelpButton" label="Help" keytip="H" onAction="HelpButton_Click" imageMso="TentativeAcceptInvitation" size="large" />
+          <button id="AboutButton" label="About" keytip="A" onAction="AboutButton_Click" getImage="GetImage" tag="logo_abbrev" size="large" />
+          <button id ="UpdateButton" label="Update" keytip="U" onAction="UpdateButton_Click" imageMso="HighImportance" size="large" visible="false" />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>

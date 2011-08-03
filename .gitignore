@@ -1,0 +1,6 @@
+.hg
+img
+.hgignore
+bin
+obj
+push.bat
