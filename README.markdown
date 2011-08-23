@@ -21,4 +21,4 @@ but it currently offers:
   * Some formatting macros for [currencies](http://code.google.com/p/finansu/wiki/Currencies) and
     [a few layout options](http://code.google.com/p/finansu/wiki/Layout) that aren't easily accessible in Excel
 
-![FinAnSu in action](http://finansu.googlecode.com/hg/img/quote.gif "FinAnSu in action")
+[FinAnSu in action](http://finansu.googlecode.com/hg/img/quote.gif "FinAnSu in action")
