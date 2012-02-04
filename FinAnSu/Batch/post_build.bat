@@ -4,10 +4,10 @@ echo FinAnSu Post-Build
 echo ------------------
 echo.
 
-echo Moving DNA, DLL and XLL to bin\Release\unpacked . . .
+echo Copying DNA, DLL and XLL to bin\Release\unpacked . . .
 cd ..\bin\Release\
 xcopy FinAnSu.* unpacked\FinAnSu.* /i /y
-del FinAnSu.*
+rem del FinAnSu.*
 echo.
 
 echo Packing into single XLL . . .
