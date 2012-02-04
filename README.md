@@ -1,6 +1,13 @@
 FinAnSu
 =======
 
+<table>
+<tr><th>Homepage</th><td>http://www.brymck.com</td></tr>
+<tr><th>Author</th><td>Bryan McKelvey</td></tr>
+<tr><th>Copyright</th><td>(c) 2010-2012 Bryan McKelvey</td></tr>
+<tr><th>License</th><td>MIT</td></tr>
+</table>
+
 FinAnSu aims to provide user-friendly tools for use in financial applications. The add-in is in its development stages,
 but it currently offers:
 
@@ -52,5 +59,8 @@ Installation
    page](https://github.com/brymck/finansu/downloads)
 2. Unzip it to a temporary directory
 3. Run the `install.bat` script
+
+In Action
+---------
 
 ![FinAnSu in action](https://github.com/brymck/finansu/raw/master/img/quote.gif)
