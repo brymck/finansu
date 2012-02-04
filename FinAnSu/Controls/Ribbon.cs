@@ -7,17 +7,14 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 
-using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
-using System.Resources;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 using System.Xml;
-using Microsoft.Office.Core;
-using Excel = Microsoft.Office.Interop.Excel;
+using ExcelDna.Integration.CustomUI;
 using FinAnSu;
+using Excel = Microsoft.Office.Interop.Excel;
 
 // Needs to be COM-visible to work
 [ComVisible(true)]
