@@ -2,7 +2,7 @@ FinAnSu
 =======
 
 <table>
-<tr><th>Homepage</th><td>http://www.brymck.com</td></tr>
+<tr><th>Homepage</th><td>[brymck.herokuapp.com](http://brycmk.herokuapp.com)</td></tr>
 <tr><th>Author</th><td>Bryan McKelvey</td></tr>
 <tr><th>Copyright</th><td>(c) 2010-2012 Bryan McKelvey</td></tr>
 <tr><th>License</th><td>MIT</td></tr>
