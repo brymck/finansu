@@ -2,14 +2,26 @@ FinAnSu
 =======
 
 <table>
-<tr><th>Homepage</th><td><a href="http://brymck.herokuapp.com">brymck.herokuapp.com</a></td></tr>
-<tr><th>Author</th><td>Bryan McKelvey</td></tr>
-<tr><th>Copyright</th><td>(c) 2010-2012 Bryan McKelvey</td></tr>
-<tr><th>License</th><td>MIT</td></tr>
+  <tr>
+    <th>Homepage</th>
+    <td><a href="http://brymck.herokuapp.com">brymck.herokuapp.com</a></td>
+  </tr>
+  <tr>
+    <th>Author</th>
+    <td>Bryan McKelvey</td>
+  </tr>
+  <tr>
+    <th>Copyright</th>
+    <td>(c) 2010-2012 Bryan McKelvey</td>
+  </tr>
+  <tr>
+    <th>License</th>
+    <td>MIT</td>
+  </tr>
 </table>
 
-FinAnSu aims to provide user-friendly tools for use in financial applications. The add-in is in its development stages,
-but it currently offers:
+FinAnSu aims to provide user-friendly tools for use in financial applications.
+The add-in is in its development stages, but it currently offers:
 
   * Live, streaming [web import](http://code.google.com/p/finansu/wiki/WebData
     capabilities) (Excel 2002+), including custom functions for easily
