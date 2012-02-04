@@ -22,7 +22,7 @@ echo.
 
 echo Copying DNA, DLL and XLL to bin\Release\x64...
 copy FinAnSu.dll x64 /y
-copy ..\..\Resources\ExcelDna64.dna x64\FinAnSu.dna /y
+copy ..\..\Resources\ExcelDna.dna x64\FinAnSu.dna /y
 copy ..\..\Resources\ExcelDna64.xll x64\FinAnSu.xll /y
 echo.
 
@@ -44,6 +44,11 @@ echo.
 
 echo Packing into archive...
 7za a -tzip FinAnSu.zip *.*
+echo.
+
+echo Copying add-ins to add-in folder...
+copy FinAnSu.xll %AppData%\Microsoft\AddIns
+copy FinAnSu_x64.xll %AppData%\Microsoft\AddIns
 echo.
 goto Exit
 
