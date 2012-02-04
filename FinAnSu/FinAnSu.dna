@@ -1,3 +1,0 @@
-<DnaLibrary RuntimeVersion="v4.0" Name="FinAnSu" Language="CS">
-    <ExternalLibrary Path="FinAnSu.dll" Pack="true" />
-</DnaLibrary>
