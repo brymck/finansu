@@ -1,11 +1,3 @@
-<DnaLibrary>
-<![CDATA[
-
-	Public Module Module1
-		Function AddThem(x, y)
-			AddThem = x + y
-		End Function	
-	End Module
-
-]]>
+<DnaLibrary RuntimeVersion="v4.0" Name="FinAnSu" Language="CS">
+    <ExternalLibrary Path="FinAnSu.dll" Pack="true" />
 </DnaLibrary>
