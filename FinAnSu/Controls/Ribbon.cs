@@ -15,6 +15,7 @@ using System.Xml;
 using ExcelDna.Integration.CustomUI;
 using FinAnSu;
 using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Core;
 
 // Needs to be COM-visible to work
 [ComVisible(true)]

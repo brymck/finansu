@@ -33,7 +33,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ExcelDna.Integration">
-      <HintPath>..\packages\Excel-DNA.0.29\lib\ExcelDna.Integration.dll</HintPath>
+      <HintPath>Resources\ExcelDna.Integration.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -113,14 +114,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Examples.xls">
+    <None Include="install_x64.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="FinAnSu.dna">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="FinAnSu.xll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="Examples.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="install.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
