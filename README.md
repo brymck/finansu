@@ -58,9 +58,8 @@ The add-in is in its development stages, but it currently offers:
 Requirements
 ------------
 
-Currently, this works with 32- and 64-bit versions of **Windows**, but it
-requires a **32-bit version of Excel** (2003+ for best results). I'm looking
-into improving 64-bit support.
+Currently, this works with **32- and 64-bit versions of Windows and Excel**
+(Office 2003+ for best results).
 
 The add-in also requires [.NET 4](http://www.microsoft.com/net).
 
@@ -84,8 +83,7 @@ top directory of the repo (the same folder as this readme).
 My work on this project is written in [Visual
 Studio](http://www.microsoft.com/visualstudio/en-us),
 although there are open source alternatives like
-[SharpDevelop](http://www.icsharpcode.net/opensource/sd/). Go ahead and [fork
-this repo](http://help.github.com/fork-a-repo/)
+[SharpDevelop](http://www.icsharpcode.net/opensource/sd/).
 
 In Action
 ---------
