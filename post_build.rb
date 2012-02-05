@@ -102,13 +102,19 @@ def zip_addin(path)
   zip_name = "#{PROJECT_NAME}-%s_%s.zip" % [version, last_directory(path)]
   File.delete(zip_name) if File.exist?(zip_name)
 
+  # Move latest FinAnSu to main release directory
+  FileUtils.cp File.join(path, "FinAnSu-packed.xll"),
+               File.join(@dirs[:release], "FinAnSu.xll")
+
   Dir.chdir(@dirs[:release]) do
-    Zip::ZipFile.open(zip_name, Zip::ZipFile::CREATE) do |zip_file|
-      zip_file.add "Examples.xls", "Examples.xls"
-      zip_file.add "install.bat", "install.bat"
-      zip_file.add "README.txt", "README.txt"
-      zip_file.add "#{PROJECT_NAME}.xll", File.join(path, "#{PROJECT_NAME}-packed.xll")
-    end
+    # Clear archive
+    system "7za d -tzip #{zip_name}"
+
+    # Add files to archive
+    system "7za a -tzip #{zip_name} Examples.xls"
+    system "7za a -tzip #{zip_name} FinAnSu.xll"
+    system "7za a -tzip #{zip_name} install.bat"
+    system "7za a -tzip #{zip_name} Readme.txt"
   end
 end
 
