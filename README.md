@@ -82,8 +82,10 @@ This project has the following dependencies (that don't come bundled with the re
    Once it's installed, make sure you have Bundler (`gem install bundler` in a
    command prompt). Then run `bundle update` in the top directory of the repo
    (the same folder as this readme).
-2. [Git](http://help.github.com/set-up-git-redirect)
-3. And anything like Windows, Office or .NET 4 if you want to do any testing or
+2. [7za](http://www.7-zip.org/download.html) -- the command line version of     
+   7-Zip, installed somewhere in your `%Path%`.                                    
+3. [Git](http://help.github.com/set-up-git-redirect)
+4. And anything like Windows, Office or .NET 4 if you want to do any testing or
    compilation
 
 In Action
