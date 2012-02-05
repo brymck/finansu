@@ -67,23 +67,24 @@ Installation
 ------------
 
 1. Download the current version of FinAnSu on my [GitHub downloads
-   page](https://github.com/brymck/finansu/downloads)
+   page](https://github.com/brymck/finansu/downloads). Most of you are probably
+   using a 32-bit version of Office, as it's the default installation even on
+   64-bit versions of Windows.
 2. Unzip it to a temporary directory
 3. Run the `install.bat` script
 
 Development
 -----------
 
-To get the build scripts working, you'll need [Ruby for
-Windows](http://rubyinstaller.org/downloads/). Once it's installed, make sure
-you have Bundler (`gem install bundler` in a command prompt). To verify that
-you have all the Ruby dependencies for this project, run `bundle update` in the
-top directory of the repo (the same folder as this readme).
+This project has the following dependencies (that don't come bundled with the repo):
 
-My work on this project is written in [Visual
-Studio](http://www.microsoft.com/visualstudio/en-us),
-although there are open source alternatives like
-[SharpDevelop](http://www.icsharpcode.net/opensource/sd/).
+1. [Ruby for Windows](http://rubyinstaller.org/downloads/)  
+   Once it's installed, make sure you have Bundler (`gem install bundler` in a
+   command prompt). Then run `bundle update` in the top directory of the repo
+   (the same folder as this readme).
+2. [Git](http://help.github.com/set-up-git-redirect)
+3. And anything like Windows, Office or .NET 4 if you want to do any testing or
+   compilation
 
 In Action
 ---------
