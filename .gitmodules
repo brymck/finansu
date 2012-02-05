@@ -1,3 +1,6 @@
-[submodule "FinAnSu/Lib/ExcelDna"]
-	path = FinAnSu/Lib/ExcelDna
-	url = git://github.com/KevinT/ExcelDna
+[submodule "Lib/ExcelDna"]
+	path = Lib/ExcelDna
+	url = git://github.com/KevinT/ExcelDna.git
+[submodule "Lib/github_upload"]
+	path = Lib/github_upload
+	url = git://github.com/github/upload.git
