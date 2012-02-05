@@ -186,7 +186,7 @@
             this.DownloadLinkLabel.Size = new System.Drawing.Size(187, 13);
             this.DownloadLinkLabel.TabIndex = 3;
             this.DownloadLinkLabel.TabStop = true;
-            this.DownloadLinkLabel.Text = "http://code.google.com/p/finansu/";
+            this.DownloadLinkLabel.Text = "https://github.com/brymck/finansu";
             this.DownloadLinkLabel.VisitedLinkColor = System.Drawing.Color.Blue;
             this.DownloadLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UrlLinkLabel_LinkClicked);
             // 

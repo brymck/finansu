@@ -136,9 +136,7 @@
   <ItemGroup>
     <None Include="Resources\logo_abbrev.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>ruby "$(SolutionDir)post_build.rb" $(SolutionDir)</PostBuildEvent>
