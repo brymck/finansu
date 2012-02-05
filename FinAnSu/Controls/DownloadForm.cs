@@ -28,7 +28,19 @@ namespace FinAnSu.Controls
 
         private void ProgressWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            Uri url = new Uri(string.Format("http://finansu.googlecode.com/files/FinAnSu-{0}.zip", FinAnSu.Main.LatestVersion()));
+            string suffix = "";
+
+            if (Environment.Is64BitProcess)
+            {
+                suffix = "x64";
+            }
+            else
+            {
+                suffix = "x86";
+            }
+
+            Uri url = new Uri(string.Format("https://github.com/downloads/brymck/finansu/FinAnSu-{0}_{1}.zip",
+                FinAnSu.Main.LatestVersion(), suffix));
 
             // first, we need to get the exact size (in bytes) of the file we are downloading
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);

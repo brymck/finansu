@@ -34,6 +34,10 @@ def write_statuses(array_or_hash, opts = {})
   end
 end
 
+def last_directory(path)
+  File.split(path).last
+end
+
 # Grabs the version number by parsing Properties\AssemblyInfo.cs
 def version(path = ARGV[0])
   return @version if defined?(@version)
@@ -80,7 +84,8 @@ def build_directory_list(solution_dir)
     :release   => File.join(project_dir, "bin", "Release"),
     :x86       => File.join(project_dir, "bin", "Release", "x86"),
     :x64       => File.join(project_dir, "bin", "Release", "x64"),
-    :resources => File.join(project_dir, "Resources")
+    :resources => File.join(project_dir, "Resources"),
+    :addins    => File.join(ENV["AppData"], "Microsoft", "AddIns")
   }
 end
 
@@ -89,13 +94,12 @@ def pack_addin(path)
     FileUtils.cp "#{PROJECT_NAME}.xll", "ExcelDna.xll"
     FileUtils.cp File.join(@dirs[:excel_dna], "ExcelDnaPack.exe"), "."
     FileUtils.cp File.join(@dirs[:excel_dna], "ExcelDna.Integration.dll"), "."
-    system "ExcelDnaPack FinAnSu.dna /y"
+    puts %x[#{File.join(path, "ExcelDnaPack")} #{File.join(path, "FinAnSu.dna")} /y]
   end
 end
 
 def zip_addin(path)
-  suffix = File.split(path).last
-  zip_name = "#{PROJECT_NAME}-%s_%s.zip" % [version, suffix]
+  zip_name = "#{PROJECT_NAME}-%s_%s.zip" % [version, last_directory(path)]
   File.delete(zip_name) if File.exist?(zip_name)
 
   Dir.chdir(@dirs[:release]) do
@@ -106,6 +110,11 @@ def zip_addin(path)
       zip_file.add "#{PROJECT_NAME}.xll", File.join(path, "#{PROJECT_NAME}-packed.xll")
     end
   end
+end
+
+def copy_to_addin_directory(path)
+  FileUtils.cp File.join(path, "FinAnSu-packed.xll"),
+               File.join(@dirs[:addins], "FinAnSu_#{last_directory(path)}.xll")
 end
 
 write_status "Version #{version}"
@@ -139,6 +148,12 @@ Dir["#{PROJECT_NAME}-*.zip"].each do |zip_file|
   write_statuses Zip::ZipFile.open(zip_file).entries, :indent => 1
 end
 
+write_header "Copying add-ins to add-in directory"
+copy_to_addin_directory @dirs[:x86]
+copy_to_addin_directory @dirs[:x64]
+
 # Write new version number
 write_header "Writing version number to text file"
-File.open(File.join(@dirs[:solution], "VERSION"), "w") { |f| f.puts version }
+puts version_path = File.join(@dirs[:solution], "VERSION")
+File.open(version_path, "w") { |f| f.puts version }
+write_status File.read(version_path)

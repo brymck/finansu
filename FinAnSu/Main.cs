@@ -23,8 +23,8 @@ namespace FinAnSu
         [ExcelFunction("Returns latest version number for FinAnSu.")]
         public static string LatestVersion()
         {
-            return Web.GetWebData("http://code.google.com/p/finansu/",
-                new string[] { "FinAnSu\\-([0-9]{1,2}\\.[0-9]{1,2}(?:\\.[0-9]{1,2})?)\\.zip" }, 1, null)[0, 0].ToString();
+            return Web.GetWebData("https://raw.github.com/brymck/finansu/master/VERSION",
+                new string[] { "([0-9\\.]+)" }, 1, null)[0, 0].ToString();
         }
 
         [ExcelFunction("Returns installed version number for FinAnSu.")]
