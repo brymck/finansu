@@ -74,6 +74,7 @@ def build_directory_list(solution_dir)
   project_dir = File.join(solution_dir, PROJECT_NAME)
 
   @dirs = {
+    :solution  => solution_dir,
     :project   => project_dir,
     :excel_dna => File.join(solution_dir, "Lib", "ExcelDna", "Distribution"),
     :release   => File.join(project_dir, "bin", "Release"),
@@ -137,3 +138,7 @@ Dir["#{PROJECT_NAME}-*.zip"].each do |zip_file|
   write_status zip_file
   write_statuses Zip::ZipFile.open(zip_file).entries, :indent => 1
 end
+
+# Write new version number
+write_header "Writing version number to text file"
+File.open(File.join(@dirs[:solution], "VERSION"), "w") { |f| f.puts version }
