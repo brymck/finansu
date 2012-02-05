@@ -2,6 +2,8 @@
 require "fileutils"
 require "zip/zip"
 
+PROJECT_NAME = "FinAnSu"
+
 # Writes a blank row then a header row
 def write_header(text)
   puts
@@ -36,7 +38,7 @@ end
 def version(path = ARGV[0])
   return @version if defined?(@version)
 
-  File.open(File.join(path, "Properties", "AssemblyInfo.cs")) do |file|
+  File.open(File.join(path, PROJECT_NAME, "Properties", "AssemblyInfo.cs")) do |file|
     file.each_line do |line|
       if line =~ /AssemblyFileVersion\(\"([0-9.]+)\"\)/
         @version = $1.gsub(/(\.0)*$/, "")
@@ -48,8 +50,8 @@ def version(path = ARGV[0])
   @version = nil
 end
 
-# Create an empty directory at the supplied +dir+ by making all folders along   
-# the path and then clearing its contents, if necessary                         
+# Create an empty directory at the supplied +dir+ by making all folders along
+# the path and then clearing its contents, if necessary
 def create_empty_directory(path)
   FileUtils.mkdir_p path
   FileUtils.rm_rf Dir["#{path}/."], :secure => true
@@ -57,21 +59,23 @@ end
 
 def copy_addin_files(to_path, xll_name)
   # Copy DLL
-  FileUtils.cp File.join(@dirs[:release], "FinAnSu.dll"), to_path
+  FileUtils.cp File.join(@dirs[:release], "#{PROJECT_NAME}.dll"), to_path
 
   # Copy XLL add-in
   FileUtils.cp File.join(@dirs[:excel_dna], xll_name),
-          File.join(to_path, "FinAnSu.xll")
+          File.join(to_path, "#{PROJECT_NAME}.xll")
 
   # Copy DNA files
-  FileUtils.cp File.join(@dirs[:resources], "FinAnSu.dna"), to_path
+  FileUtils.cp File.join(@dirs[:resources], "#{PROJECT_NAME}.dna"), to_path
 end
 
 # Build list of relevant directories
-def build_directory_list(project_dir)
+def build_directory_list(solution_dir)
+  project_dir = File.join(solution_dir, PROJECT_NAME)
+
   @dirs = {
     :project   => project_dir,
-    :excel_dna => File.join(project_dir, "Lib", "ExcelDna", "Distribution"),
+    :excel_dna => File.join(solution_dir, "Lib", "ExcelDna", "Distribution"),
     :release   => File.join(project_dir, "bin", "Release"),
     :x86       => File.join(project_dir, "bin", "Release", "x86"),
     :x64       => File.join(project_dir, "bin", "Release", "x64"),
@@ -81,7 +85,7 @@ end
 
 def pack_addin(path)
   Dir.chdir(path) do
-    FileUtils.cp "FinAnSu.xll", "ExcelDna.xll"
+    FileUtils.cp "#{PROJECT_NAME}.xll", "ExcelDna.xll"
     FileUtils.cp File.join(@dirs[:excel_dna], "ExcelDnaPack.exe"), "."
     FileUtils.cp File.join(@dirs[:excel_dna], "ExcelDna.Integration.dll"), "."
     system "ExcelDnaPack FinAnSu.dna /y"
@@ -90,7 +94,7 @@ end
 
 def zip_addin(path)
   suffix = File.split(path).last
-  zip_name = "FinAnSu-%s_%s.zip" % [version, suffix]
+  zip_name = "#{PROJECT_NAME}-%s_%s.zip" % [version, suffix]
   File.delete(zip_name) if File.exist?(zip_name)
 
   Dir.chdir(@dirs[:release]) do
@@ -98,7 +102,7 @@ def zip_addin(path)
       zip_file.add "Examples.xls", "Examples.xls"
       zip_file.add "install.bat", "install.bat"
       zip_file.add "README.txt", "README.txt"
-      zip_file.add "FinAnSu.xll", File.join(path, "FinAnSu-packed.xll")
+      zip_file.add "#{PROJECT_NAME}.xll", File.join(path, "#{PROJECT_NAME}-packed.xll")
     end
   end
 end
@@ -129,7 +133,7 @@ write_statuses Dir["*/*-packed.xll"]
 write_header "Zipping add-ins"
 zip_addin @dirs[:x86]
 zip_addin @dirs[:x64]
-Dir["FinAnSu-*.zip"].each do |zip_file|
+Dir["#{PROJECT_NAME}-*.zip"].each do |zip_file|
   write_status zip_file
   write_statuses Zip::ZipFile.open(zip_file).entries, :indent => 1
 end

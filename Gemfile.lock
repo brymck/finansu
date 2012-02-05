@@ -1,10 +1,14 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    mime-types (1.17.2)
     rubyzip (0.9.5)
+    xml-simple (1.1.1)
 
 PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  mime-types
   rubyzip
+  xml-simple
