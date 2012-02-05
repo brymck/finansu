@@ -72,6 +72,21 @@ Installation
 2. Unzip it to a temporary directory
 3. Run the `install.bat` script
 
+Development
+-----------
+
+To get the build scripts working, you'll need [Ruby for                         
+Windows](http://rubyinstaller.org/downloads/). Once it's installed, make sure   
+you have Bundler (`gem install bundler` in a command prompt). To verify that    
+you have all the Ruby dependencies for this project, run `bundle update` in the 
+top directory of the repo (the same folder as this readme).                     
+
+My work on this project is written in [Visual                                   
+Studio](http://www.microsoft.com/visualstudio/en-us),                           
+although there are open source alternatives like                                
+[SharpDevelop](http://www.icsharpcode.net/opensource/sd/). Go ahead and [fork   
+this repo](http://help.github.com/fork-a-repo/)                                 
+
 In Action
 ---------
 
