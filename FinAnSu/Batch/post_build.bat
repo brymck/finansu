@@ -23,10 +23,10 @@ echo.
 echo Copying DNA, DLL and XLL to bin\Release\x64...
 copy FinAnSu.dll x64 /y
 copy ..\..\Resources\ExcelDna.dna x64\FinAnSu.dna /y
-copy ..\..\Resources\ExcelDna64.xll x64\FinAnSu.xll /y
+copy ..\..\Resources\ExcelDna64-packed.xll x64\FinAnSu.xll /y
 echo.
 
-echo Packing into single XLL . . .
+echo Packing into single XLL...
 ExcelDnaPack x86\FinAnSu.dna /y
 if errorlevel 9009 goto ExcelDnaNotFound
 move /y x86\FinAnSu-packed.xll FinAnSu.xll
