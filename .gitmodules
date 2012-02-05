@@ -1,6 +1,3 @@
-[submodule "Lib/github_upload"]
-	path = Lib/github_upload
-	url = git://github.com/magical/github_upload.git
 [submodule "Lib/ExcelDna"]
 	path = Lib/ExcelDna
 	url = git://github.com/KevinT/ExcelDna.git
