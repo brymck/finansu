@@ -1,0 +1,10 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    rubyzip (0.9.5)
+
+PLATFORMS
+  x86-mingw32
+
+DEPENDENCIES
+  rubyzip
