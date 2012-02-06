@@ -1,4 +1,4 @@
-* [Intro](/finansu)
+* [Intro](/finansu/)
 * [Installation](install)
 * [Web Import](web)
 * [Options](options)
