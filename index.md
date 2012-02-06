@@ -9,22 +9,22 @@ title: FinAnSu
     * [Introduction]
     * [Installation]
   * Web Import Functions
-    * [ArrayFormulas Using Array Formulas]
-    * [Quotes Real-Time Quotes]
-    * [QuoteHistory Historical Quotes]
-    * [WebData Web Data]
+    * [Using Array Formulas](ArrayFormulas)
+    * [Real-Time Quotes](Quotes)
+    * [Historical Quotes](QuoteHistory)
+    * [Web Data](WebData)
   * Options Math Functions
-    * [BlackScholes Black-Scholes]
+    * [Black-Scholes](BlackScholes)
     * [Greeks]
-    * [AmericanBermudan American/Bermudan Options]
-    * [FRAs Forward Rate Agreements]
+    * [American/Bermudan Options](AmericanBermudan)
+    * [Forward Rate Agreements](FRAs)
   * Yield Curve Functions
     * [Interpolation]
   * Other Functions
     * [Sorting]
-    * [Colors Color Conversion]
-    * [Distributions Distribution Functions]
-    * [Version Version Information]
+    * [Color Conversion](Colors)
+    * [Distribution Functions](Distributions)
+    * [Version Information](Version)
   * Formatting Macros
     * [Currencies]
     * [Layout]
@@ -39,15 +39,15 @@ Purpose
 
 !FinAnSu aims to provide user-friendly tools for use in financial applications. The add-in is in its development stages, but it currently offers:
 
-  * *Live, streaming [WebData web import] capabilities* (Excel 2002+), including custom functions for easily [Quotes importing security prices] from Bloomberg.com, Google Finance and Yahoo! Finance
-  * Functions that can [WebData#ImportCSV parse CSVs] on the web, including custom functions to easily import stock quote data from [Quotes#GoogleHistory Google Finance] and instrument data from the [Quotes#H15History Fed H.15 release] (yields for Fed Funds, commercial paper, Treasuries, interest-rate swaps, etc.).
-  * Basic options pricing, including [BlackScholes Black-Scholes], [Greeks the options Greeks] and [AmericanBermudan a few more complex options models]
+  * *Live, streaming [web import](WebData) capabilities* (Excel 2002+), including custom functions for easily [importing security prices](Quotes) from Bloomberg.com, Google Finance and Yahoo! Finance
+  * Functions that can [parse CSVs](WebData#ImportCSV) on the web, including custom functions to easily import stock quote data from [Google Finance](Quotes#GoogleHistory) and instrument data from the [Fed H.15 release](Quotes#H15History) (yields for Fed Funds, commercial paper, Treasuries, interest-rate swaps, etc.).
+  * Basic options pricing, including [Black-Scholes](BlackScholes), [the options Greeks](Greeks) and [a few more complex options models](AmericanBermudan)
   * A bit on [FRAs] (forward rate agreements)
-  * A continuously compounded rate [Interpolation interpolator] (need to add more: linear, cubic, cubic spline, etc.)
+  * A continuously compounded rate [interpolator](Interpolation) (need to add more: linear, cubic, cubic spline, etc.)
   * A Federal Reserve holiday calculator (need to add more for different calendars, as well as roll date conventions)
   * A handful of tools for converting between discount factors and forward rates
-  * Function to [Sorting automatically sort] ranges that contain rows and columns of data
-  * Some formatting macros for [Currencies currencies] and [Layout a few layout options] that aren't easily accessible in Excel
+  * Function to [automatically sort](Sorting) ranges that contain rows and columns of data
+  * Some formatting macros for [currencies](Currencies) and [a few layout options](Layout) that aren't easily accessible in Excel
 
   http://finansu.googlecode.com/hg/img/quote.gif
 
@@ -60,9 +60,9 @@ Frequently Asked Questions
 
   First, try using the function wizard in Excel. All functions have descriptions of what values they return and accept. That is, type something like `=Quote(` in a cell in Excel, then hit the _f,,x,,_ key just above the worksheet (or press `Ctrl+A`).
 
-  If that's confusing, check the documentation here and the [http://finansu.googlecode.com/hg/FinAnSu/Examples.xls Examples worksheet].
+  If that's confusing, check the documentation here and the [Examples worksheet](http://finansu.googlecode.com/hg/FinAnSu/Examples.xls).
 
-  If none of that helps or if you have any questions or suggestions for clarity, go ahead and email me. My contact information is [#Contact_Information below].
+  If none of that helps or if you have any questions or suggestions for clarity, go ahead and email me. My contact information is [below](#Contact_Information).
 
 How long will you support this?
 -------------------------------
@@ -71,65 +71,59 @@ How long will you support this?
 
   * *Temporary:* Bloomberg, Google or Yahoo! change the setup of their website such that I have to change how I parse data from them. This is extremely rare; I anticipate it happening maybe once every few years. When it does, it may take a _brief_ while before I notice and update the program.
 
-  * *Permanent:* Bloomberg, Google or Yahoo! stop publishing financial data publicly. That said, if you change the `source` parameter for functions like [Quotes#Quote Quote] or [QuoteHistory#QuoteHistory QuoteHistory], very often you can find an alternate source. Of course, losing _all three_ of them would be a devastating [http://en.wikipedia.org/wiki/Black_swan_theory Black Swan]. You know, one of those "once-in-a-million-years" events (i.e. a truly unpredictable misfortune for which we assume a ridiculously optimistic probability of avoidance).
+  * *Permanent:* Bloomberg, Google or Yahoo! stop publishing financial data publicly. That said, if you change the `source` parameter for functions like [Quote](Quotes#Quote) or [QuoteHistory](QuoteHistory#QuoteHistory), very often you can find an alternate source. Of course, losing _all three_ of them would be a devastating [Black Swan](http://en.wikipedia.org/wiki/Black_swan_theory). You know, one of those "once-in-a-million-years" events (i.e. a truly unpredictable misfortune for which we assume a ridiculously optimistic probability of avoidance).
 
   There may also be some disruptions in different Excel or .NET versions, but I _think_ they will be minimal.
 
-#### Why is [Quotes#Quote Quote] or [Quotes#QuoteHistory QuoteHistory] only returning one value?
+#### Why is [Quote](Quotes#Quote) or [QuoteHistory](Quotes#QuoteHistory) only returning one value?
 
-  See [ArrayFormulas the section on array formulas].
+  See [the section on array formulas](ArrayFormulas).
 
 #### Can I use this at work, on other computer, etc.?
 
-  Hopefully. I'm unfamiliar with the access restrictions at different companies, but in general if you meet the [#Requirements minimum requirements] you should be fine. If there are real access limitations, feel free to [#Contact_Information inform me], but I don't know how much I can do about it.
+  Hopefully. I'm unfamiliar with the access restrictions at different companies, but in general if you meet the [minimum requirements](#Requirements) you should be fine. If there are real access limitations, feel free to [inform me](#Contact_Information), but I don't know how much I can do about it.
 
   Also, this application does _not_ transmit any usage data to me or even connect to any servers owned by me. Feedback is always appreciated, but I'm not collecting it behind the scenes.
 
 #### What do I do if I notice an error?
 
-  Either [#Contact_Information email me] or [http://code.google.com/p/finansu/issues/entry enter a new issue]. There are some very real errors out there, and in the long-run the fix is _usually_ better solved on my end.
+  Either [email me](#Contact_Information) or [enter a new issue](http://code.google.com/p/finansu/issues/entry). There are some very real errors out there, and in the long-run the fix is _usually_ better solved on my end.
 
 ----
 
 Requirements
 ------------
 
-  * [http://office.microsoft.com/excel/ Microsoft Excel for Windows]
-  * [http://www.microsoft.com/downloads/details.aspx?FamilyID=9cfb2d51-5ff4-4491-b0e5-b386f32c0992 Microsoft .NET Framework 4]
+  * [Microsoft Excel for Windows](http://office.microsoft.com/excel/)
+  * [Microsoft .NET Framework 4](http://www.microsoft.com/downloads/details.aspx?FamilyID=9cfb2d51-5ff4-4491-b0e5-b386f32c0992)
   * The ability to install add-ins. There shouldn't be any problems unless macro security is set to high or you have a _very_ restrictive policy regarding writing to your `%AppData%` folder.
 
 ----
 
-Contact Information
--------------------
+Installation
+============
 
-Name: Bryan !McKelvey
-
-Email: [mailto:bryan.mckelvey@gmail.com bryan.mckelvey@gmail.com]
-
-#summary Installation instructions.
-
-  # Close Excel.
-  # Download the [https://code.google.com/p/finansu/downloads/list latest zip file from the Downloads tab].
-  # Unzip the files to a safe location.
-  # There are two ways to install !FinAnSu: the automatic way that uses the installation batch file, or a simple copy-and-paste of the .xll file into the appropriate directory.
-    * *Automatic:* Run `install.bat` (closing Excel if prompted).
-       http://finansu.googlecode.com/hg/img/run_install_bat.png
-    * *Manual:* Copy `FinAnSu.xll` to `%AppData%\Microsoft\AddIns`. _(Note: You can type that into the `Start Menu > Run...` window or the location bar of any Folder Explorer window.)_
-       http://finansu.googlecode.com/hg/img/gotoappdata.png
-  # If this is your first install, open Excel and do the following:
-    * *Excel 2007 and later*
-      * Click `Office Button > Excel Options... > Add-Ins`.
-      * In the `Manage:` drop-down at the bottom, click `Excel Add-ins` and `Go...` .
-      * Place a checkmark next to !FinAnSu.
-    * *Excel 2003 and earlier*
-      * Go to `Tools > Add-Ins`.
-      * Place a checkmark next to !FinAnSu.
-  # If you want to check the installation, open the `Examples.xls` spreadsheet. If the functions are returning values, you're all set!
+  1. Close Excel.
+  2. Download the [latest zip file from the Downloads tab](https://code.google.com/p/finansu/downloads/list).
+  3. Unzip the files to a safe location.
+  4. There are two ways to install !FinAnSu: the automatic way that uses the installation batch file, or a simple copy-and-paste of the .xll file into the appropriate directory.
+     * *Automatic:* Run `install.bat` (closing Excel if prompted).
+        http://finansu.googlecode.com/hg/img/run_install_bat.png
+     * *Manual:* Copy `FinAnSu.xll` to `%AppData%\Microsoft\AddIns`. _(Note: You can type that into the `Start Menu > Run...` window or the location bar of any Folder Explorer window.)_
+        http://finansu.googlecode.com/hg/img/gotoappdata.png
+  5. If this is your first install, open Excel and do the following:
+     * *Excel 2007 and later*
+       * Click `Office Button > Excel Options... > Add-Ins`.
+       * In the `Manage:` drop-down at the bottom, click `Excel Add-ins` and `Go...` .
+       * Place a checkmark next to !FinAnSu.
+     * *Excel 2003 and earlier*
+       * Go to `Tools > Add-Ins`.
+       * Place a checkmark next to !FinAnSu.
+  6. If you want to check the installation, open the `Examples.xls` spreadsheet. If the functions are returning values, you're all set!
 
   #summary How to write array formulas.
 
-Many import functions require the use of array formulas. Microsoft has a good, long-form [http://office.microsoft.com/en-us/excel-help/introducing-array-formulas-in-excel-HA001087290.aspx explanation of array formulas] that I recommend consulting if you'd like more information. Many (most?) Excel users never receive exposure to array formulas, but they are immensely useful for complex calculations.
+Many import functions require the use of array formulas. Microsoft has a good, long-form [explanation of array formulas](http://office.microsoft.com/en-us/excel-help/introducing-array-formulas-in-excel-HA001087290.aspx) that I recommend consulting if you'd like more information. Many (most?) Excel users never receive exposure to array formulas, but they are immensely useful for complex calculations.
 
 What They Are
 -------------
@@ -141,18 +135,18 @@ Using these formulas requires a slightly different input method. First, you sele
 An Example
 ----------
 
-Below is an example using [Quotes#GoogleHistory GoogleHistory].
+Below is an example using [GoogleHistory](Quotes#GoogleHistory).
 
   # *Select a range of cells*, for example cells `A1` through `F5`.
   # *Type your formula.* In this case you would type something like `=GoogleHistory("GOOG")`.
   # *Hold down `Ctrl+Shift` and hit `Enter`* _(note: without `Ctrl+Shift+Enter` it will just be a normal formula that for `GoogleHistory` just returns the most recent business day)_.
-  # This should return the most recent five business days of price data for [http://www.google.com/finance?q=GOOG GOOG], which includes date, open, high, low, close and volume. You can verify the numbers by looking at http://www.google.com/finance/historical?q=NASDAQ:GOOG. Also, the formula in your formula bar should look like `{=GoogleHistory("GOOG")}` (note the curly braces).
+  # This should return the most recent five business days of price data for [GOOG](http://www.google.com/finance?q=GOOG), which includes date, open, high, low, close and volume. You can verify the numbers by looking at http://www.google.com/finance/historical?q=NASDAQ:GOOG. Also, the formula in your formula bar should look like `{=GoogleHistory("GOOG")}` (note the curly braces).
 
 http://finansu.googlecode.com/hg/img/array_formula.gif
 
 #summary FinAnSu's web import functionality for security quotes.
 
-Note: Before proceeding, please read the section on [ArrayFormulas array formulas] if you are unfamiliar with their usage.
+Note: Before proceeding, please read the section on [array formulas](ArrayFormulas) if you are unfamiliar with their usage.
 
 `Quote`
 -------
@@ -177,7 +171,7 @@ Returns the current quote for a security ID from Bloomberg, Google or Yahoo!
 
   * `security_id` is the security ID from the quote service.
   * `source` is the name or abbreviation of the quote service (`"b"`, `"Bloomberg"`, `"g"`, `"Google"`, `"y"`, `"Yahoo"`, etc.). Defaults to `"Bloomberg"`.
-  * `params` is a list of which values to return. Accepts any combination of `"px%dtbahlv"` (price, change, % change, date, time, bid, ask, high, low, volume). Bid/ask are not available through Google. Use [#QuoteParams =QuoteParams()] for help if necessary. Defaults to price.
+  * `params` is a list of which values to return. Accepts any combination of `"px%dtbahlv"` (price, change, % change, date, time, bid, ask, high, low, volume). Bid/ask are not available through Google. Use [=QuoteParams()](#QuoteParams) for help if necessary. Defaults to price.
   * `live_updating` is whether you want this function to return continuously stream live quotes to the cell. Defaults to `false`.
   * `frequency` is the number of seconds between update requests (if live_updating is `true`). Defaults to `15` seconds.
   * `show_headers` is whether to display the headers for each column. Defaults to `false`.
@@ -187,7 +181,7 @@ http://www.brymck.com/images/finansu_live_quote.gif
 `QuoteParams`
 -------------
 
-Builds a text string for use in [#Quote =Quote()] designating which values you would like returned.
+Builds a text string for use in [=Quote()](#Quote) designating which values you would like returned.
 
 ```
 =QuoteParams(price, change, pct_change, date, time, bid, ask, open, high, low, volume)
@@ -212,22 +206,22 @@ Builds a text string for use in [#Quote =Quote()] designating which values you w
 `LiveQuote`
 -----------
 
-Same as [#Quote Quote] with the `live_updating` argument equal to `true`.
+Same as [Quote](#Quote) with the `live_updating` argument equal to `true`.
 
 `BloombergQuote`
 ----------------
 
-Same as [#Quote Quote] with the `source` argument equal to `"Bloomberg"`.
+Same as [Quote](#Quote) with the `source` argument equal to `"Bloomberg"`.
 
 `GoogleQuote`
 -------------
 
-Same as [#Quote Quote] with the `source` argument equal to `"Google"`.
+Same as [Quote](#Quote) with the `source` argument equal to `"Google"`.
 
 `YahooQuote`
 ------------
 
-Same as [#Quote Quote] with the `source` argument equal to `"Yahoo"`.
+Same as [Quote](#Quote) with the `source` argument equal to `"Yahoo"`.
 
 `FullTicker`
 ------------
@@ -271,7 +265,7 @@ Returns !FinAnSu's intepretation of an abbreviated source name. Mostly for debug
 
 #summary FinAnSu's web import functionality for quote history.
 
-Note: Before proceeding, please read the section on [ArrayFormulas array formulas] if you are unfamiliar with their usage.
+Note: Before proceeding, please read the section on [array formulas](ArrayFormulas) if you are unfamiliar with their usage.
 
 `QuoteHistory`
 --------------
@@ -301,14 +295,14 @@ Returns the historical date, open, high, low, close, volume and adjusted price f
   * `start_date` is the date from which to start retrieving history. Defaults to the most recent close.
   * `end_date` is the date at which to stop retrieving history. Defaults to one year ago.
   * `period` is a text flag representing whether you want daily (`"d"`), weekly (`"w"`), monthly (`"m"`) or yearly (`"y"`) quotes. Monthly and yearly quotes are available only through Yahoo!. Defaults to daily. Defaults to `"d"`.
-  * `names` is a list of which values to return. Accepts any combination of `"dohlcva"` (date, open, high, low, close, volume, adj price). Adj price is available only through Yahoo!. Use [#QuoteHistoryParams =QuoteHistoryParams()] for help if necessary. Defaults to all.
+  * `names` is a list of which values to return. Accepts any combination of `"dohlcva"` (date, open, high, low, close, volume, adj price). Adj price is available only through Yahoo!. Use [=QuoteHistoryParams()](#QuoteHistoryParams) for help if necessary. Defaults to all.
   * `show_headers` is whether to display the headers for each column. Defaults to `false`.
   * `date_order` is whether to sort dates in ascending chronological order. Defaults to `false`.
 
 `QuoteHistoryParams`
 --------------------
 
-Builds a text string for use in [#QuoteHistory =QuoteHistory()] designating which values you would like returned.
+Builds a text string for use in [=QuoteHistory()](#QuoteHistory) designating which values you would like returned.
 
 ```
 =QuoteHistoryParams(date, open, high, low, close, volume, adj_close)
@@ -330,12 +324,12 @@ Builds a text string for use in [#QuoteHistory =QuoteHistory()] designating whic
 `YahooHistory`
 --------------
 
-Same as [#QuoteHistory QuoteHistory] with the `source` argument equal to `"yahoo"`.
+Same as [QuoteHistory](#QuoteHistory) with the `source` argument equal to `"yahoo"`.
 
 `GoogleHistory`
 ---------------
 
-Same as [#QuoteHistory QuoteHistory] with the `source` argument equal to `"google"`. Note that Google does not contain easily accessible data for things like indexes (such as the S&P 500). If you require such information, I recommend using [#YahooHistory YahooHistory] instead.
+Same as [QuoteHistory](#QuoteHistory) with the `source` argument equal to `"google"`. Note that Google does not contain easily accessible data for things like indexes (such as the S&P 500). If you require such information, I recommend using [YahooHistory](#YahooHistory) instead.
 
 `H15History`
 ------------
@@ -347,12 +341,12 @@ Returns information from the Fed's [http://www.federalreserve.gov/releases/h15/u
 =H15History("AAA_NA", "m") // returns a list of dates and yields for Aaa corporate bonds
 ```
 
-  * `instrument_id` is the instrument ID. Go to [http://www.federalreserve.gov/releases/h15/data.htm] and click on one of the data links. The ID is in the URL in the form `H15_[id].txt`.
+  * `instrument_id` is the instrument ID. Go to [and click on one of the data links. The ID is in the URL in the form `H15_[id](http://www.federalreserve.gov/releases/h15/data.htm]).txt`.
   * `frequency` is business day (`"b"`), daily (`"d"`), weekly Wednesday (`"ww"`), weekly Thursday (`"wt"`), weekly Friday (`"wf"`), bi-weekly (`"bw"`), monthly (`"m"`) or annual (`"a"`). Not all frequencies are available for all instruments. Defaults to business day (`"b"`)."
 
 #summary Retrieving generic web data.
 
-Note: Before proceeding, please read the section on [ArrayFormulas array formulas] if you are unfamiliar with their usage.
+Note: Before proceeding, please read the section on [array formulas](ArrayFormulas) if you are unfamiliar with their usage.
 
 `Import`
 --------
@@ -367,7 +361,7 @@ Returns a horizontal array of values based on a URL and regular expression.
 ```
 
   * `url` is the full URL of the target website.
-  * `pattern` is a [http://www.regular-expressions.info/quickstart.html regular expression pattern] where the first backreference (in parentheses) is the value you wish to retrieve.
+  * `pattern` is a [regular expression pattern](http://www.regular-expressions.info/quickstart.html) where the first backreference (in parentheses) is the value you wish to retrieve.
   * `max_length` is the maximum length of the results array.
   * `live_updating` is whether you want this function to return continuously stream live quotes to the cell.
   * `frequency` is the number of seconds between update requests (if live_updating is `true`). Defaults to `15` seconds.
@@ -375,7 +369,7 @@ Returns a horizontal array of values based on a URL and regular expression.
 `GetWebData`
 ------------
 
-Same as [#Import Import] with the `live_updating` argument equal to `false`.
+Same as [Import](#Import) with the `live_updating` argument equal to `false`.
 
 `ImportCSV`
 -----------
@@ -644,7 +638,7 @@ term_values is either 1 or 2 term LIBOR values.
 
 #summary Sorting information in Excel.
 
-Note: Before proceeding, please read the section on [ArrayFormulas array formulas] if you are unfamiliar with their usage.
+Note: Before proceeding, please read the section on [array formulas](ArrayFormulas) if you are unfamiliar with their usage.
 
 `AutoSort`
 ----------
@@ -667,7 +661,7 @@ http://finansu.googlecode.com/hg/img/autosort.gif
 
 #summary Some color-related functions.
 
-These functions are designed to aid in the development of themes, just because I got tired of converting hexadecimal colors using online tools. It supports the conversion of [http://en.wikipedia.org/wiki/Web_colors hexadecimal], [http://en.wikipedia.org/wiki/RGB_color_model RGB] and [http://en.wikipedia.org/wiki/HSL_and_HSV HSV] colors between each other.
+These functions are designed to aid in the development of themes, just because I got tired of converting hexadecimal colors using online tools. It supports the conversion of [hexadecimal](http://en.wikipedia.org/wiki/Web_colors), [RGB](http://en.wikipedia.org/wiki/RGB_color_model) and [HSV](http://en.wikipedia.org/wiki/HSL_and_HSV) colors between each other.
 
 `RGBToHex`
 ----------
@@ -819,7 +813,7 @@ Returns the probability density function.
 `LatestVersion`
 ---------------
 
-Retrieves the version number for the latest version of !FinAnSu available on the [http://code.google.com/p/finansu/ project home page].
+Retrieves the version number for the latest version of !FinAnSu available on the [project home page](http://code.google.com/p/finansu/).
 
 ```
 =LatestVersion() // returns a version number such as "1.0.1"
@@ -880,14 +874,14 @@ Centers a cell across the selected range.
 ExcelDNA
 --------
 
-This project depends on [http://exceldna.codeplex.com/ Excel-Dna], a very nifty tool which lets you utilize modern programming languages in Excel without the headache of [http://en.wikipedia.org/wiki/Visual_Studio_Tools_for_Office VSTO].
+This project depends on [Excel-Dna](http://exceldna.codeplex.com/), a very nifty tool which lets you utilize modern programming languages in Excel without the headache of [VSTO](http://en.wikipedia.org/wiki/Visual_Studio_Tools_for_Office).
 
 #summary FinAnSu's license information.
 
 MIT License
 -----------
 
-A [http://code.google.com/p/finansu/source/browse/license.txt copy of this license] is included in the source code.
+A [copy of this license](http://code.google.com/p/finansu/source/browse/license.txt) is included in the source code.
 
   Copyright (C) 2011 by Bryan !McKelvey
 
