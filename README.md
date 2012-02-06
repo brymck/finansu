@@ -27,11 +27,8 @@ FinAnSu
 FinAnSu aims to provide user-friendly tools for use in financial applications.
 The add-in is in its development stages, but it currently offers:
 
-FinAnSu aims to provide user-friendly tools for use in financial applications.
-The add-in is in its development stages, but it currently offers:
-
-  * *Live, streaming [web import](http://brymck.github.com/finansu/web)
-    capabilities* (Excel 2002+), including custom functions for easily
+  * **Live, streaming [web import](http://brymck.github.com/finansu/web)
+    capabilities** (Excel 2002+), including custom functions for easily
     [importing security prices](http://brymck.github.com/finansu/web#quote)
     from Bloomberg.com, Google Finance and Yahoo! Finance
   * Functions that can [parse
