@@ -81,8 +81,6 @@ decimal places.
   </tbody>
 </table>
 
-#summary Layout formats.
-
 Accounting Underline
 --------------------
 
