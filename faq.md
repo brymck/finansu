@@ -27,7 +27,7 @@ Using these formulas requires a slightly different input method. First, you
 select the cells you want the formula to apply to, then you type the formula,
 and then you hit `Ctrl+Shift+Enter`.
 
-Consider this example using [GoogleHistory](Quotes#GoogleHistory):
+Consider this example using [GoogleHistory](web#google_history):
 
   1. **Select a range of cells**, for example cells `A1` through `F5`.
   2. **Type your formula.** In this case you would type something like
@@ -54,10 +54,10 @@ a cell in Excel, then hit the _f<sub>x</sub>_ key just above the worksheet (or
 press `Ctrl+A`).
 
 If that's confusing, check the documentation here and the [Examples
-worksheet](http://finansu.googlecode.com/hg/FinAnSu/Examples.xls).
+worksheet](https://github.com/brymck/finansu/raw/master/FinAnSu/Examples.xls).
 
 If none of that helps or if you have any questions or suggestions for clarity,
-go ahead and email me. My contact information is [below](#Contact_Information).
+go ahead and [submit a new issue](https://github.com/brymck/finansu/issues/new).
 
 ---
 
@@ -73,30 +73,31 @@ specifically, neither of which I control:
     may take a _brief_ while before I notice and update the program.
 
   * *Permanent:* Bloomberg, Google or Yahoo! stop publishing financial data
-    publicly. That said, if you change the `source` parameter for functions
-    like [Quote](Quotes#Quote) or [QuoteHistory](QuoteHistory#QuoteHistory),
-    very often you can find an alternate source. Of course,
-    losing _all three_ of them would be a devastating [Black
-    Swan](http://en.wikipedia.org/wiki/Black_swan_theory). You know, one
-    of those "once-in-a-million-years" events (i.e. a truly unpredictable
-    misfortune for which we assume a ridiculously optimistic probability of
-    avoidance).
+    publicly. That said, if you change the `source` parameter for functions like
+    [Quote](web#quote) or [QuoteHistory](web#quote_history), very often you can
+    find an alternate source. Of course, losing _all three_ of them would be a
+    devastating [Black Swan](http://en.wikipedia.org/wiki/Black_swan_theory).
+    You know, one of those "once-in-a-million-years" events (i.e. a truly
+    unpredictable misfortune for which we assume a ridiculously optimistic
+    probability of avoidance).
 
 There may also be some disruptions in different Excel or .NET versions, but I
 _think_ they will be minimal.
 
 ---
 
-**Why is [Quote](Quotes#Quote) or [QuoteHistory](Quotes#QuoteHistory) only returning one value?**  
-See [the section on array formulas](ArrayFormulas).
+**Why is [Quote](web#quote) or [QuoteHistory](web#quote_history) only returning
+one value?**  
+See [the section on array formulas](#array_formulas).
 
 ---
 
 **Can I use this at work, on other computer, etc.?**  
 Hopefully. I'm unfamiliar with the access restrictions at different companies,
-but in general if you meet the [minimum requirements](#Requirements) you
-should be fine. If there are real access limitations, feel free to [inform
-me](#Contact_Information), but I don't know how much I can do about it.
+but in general if you meet the [minimum requirements](faq#requirements) you
+should be fine. If there are real access limitations, feel free to [submit a new
+issue](https://github.com/brymck/finansu/issues/new), but I don't know how much
+I can do about it.
 
 Also, this application does _not_ transmit any usage data to me or even connect
 to any servers owned by me. Feedback is always appreciated, but I'm not
@@ -105,5 +106,13 @@ collecting it behind the scenes.
 ---
 
 **What do I do if I notice an error?**  
-Either [email me](#Contact_Information) or [enter a new
-issue](https://github.com/brymck/finansu/issues/new).
+Feel free to [submit a new issue](https://github.com/brymck/finansu/issues/new).
+
+---
+
+**How can I contribute?**  
+[Fork the repo](http://help.github.com/fork-a-repo/) and,
+after modifying the source to your satisfaction, [submit a
+pull request](http://help.github.com/send-pull-requests/). The
+dependencies can be found in the readme on the [front page of the
+repo](https://github.com/brymck/finansu).

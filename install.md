@@ -3,8 +3,8 @@ layout: default
 title: FinAnSu - Installation
 ---
 
-System Requirements
-===================
+<a name="requirements">System Requirements</a>
+==============================================
 
   * [Microsoft Excel for Windows](http://office.microsoft.com/excel/)
   * [Microsoft .NET Framework 4](http://www.microsoft.com/downloads/details.aspx?FamilyID=9cfb2d51-5ff4-4491-b0e5-b386f32c0992)
@@ -22,7 +22,7 @@ Installation
   4. There are two ways to install FinAnSu: the automatic way that uses the
      installation batch file, or a simple copy-and-paste of the .xll file into
      the appropriate directory.
-     * **Automatic:** Run `install.bat` (closing Excel if prompted).  
+     * **Automatic:** Run `install.bat` (closing Excel if prompted).
        ![Run install.bat](img/run_install_bat.png)
      * **Manual:** Copy `FinAnSu.xll` to `%AppData%\Microsoft\AddIns`. _(Note: You
        can type that into the `Start Menu > Run...` window or the location bar
