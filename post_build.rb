@@ -3,6 +3,7 @@ require "fileutils"
 require "zip/zip"
 
 PROJECT_NAME = "FinAnSu"
+SOLUTION_DIR = File.dirname(File.expand_path(__FILE__))
 
 # Writes a blank row then a header row
 def write_header(text)
@@ -39,7 +40,7 @@ def last_directory(path)
 end
 
 # Grabs the version number by parsing Properties\AssemblyInfo.cs
-def version(path = ARGV[0])
+def version(path = SOLUTION_DIR)
   return @version if defined?(@version)
 
   File.open(File.join(path, PROJECT_NAME, "Properties", "AssemblyInfo.cs")) do |file|
@@ -58,7 +59,6 @@ end
 # the path and then clearing its contents, if necessary
 def create_empty_directory(path)
   FileUtils.mkdir_p path
-  FileUtils.rm_rf Dir["#{path}/."], :secure => true
 end
 
 def copy_addin_files(to_path, xll_name)
@@ -128,7 +128,7 @@ write_status "Version #{version}"
 # Build directory list
 write_header "Building directory list"
 @dirs = {}
-build_directory_list ARGV[0]
+build_directory_list SOLUTION_DIR
 write_statuses @dirs
 
 write_header "Creating empty directories for add-in versions"

@@ -1,12 +1,16 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    albacore (0.2.7)
+      rubyzip (~> 0.9)
     mime-types (1.17.2)
+    rubyzip (0.9.5)
     xml-simple (1.1.1)
 
 PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  albacore
   mime-types
   xml-simple

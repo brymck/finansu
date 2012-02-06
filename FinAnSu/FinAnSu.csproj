@@ -139,7 +139,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>ruby "$(SolutionDir)post_build.rb" $(SolutionDir)</PostBuildEvent>
+    <PostBuildEvent>ruby "$(ProjectDir)..\post_build.rb"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
