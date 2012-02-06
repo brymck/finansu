@@ -7,7 +7,9 @@ description: Frequently asked questions about FinAnSu
 Frequently Asked Questions
 ==========================
 
-**<a name="array_formulas">How do I get multiple values from FinAnSu functions?</a>**  
+<a name="array_formulas">How do I get multiple values from FinAnSu functions?</a>
+---------------------------------------------------------------------------------
+
 Many functions, particularly import functions, require the use of
 array formulas. Microsoft has a good, long-form [explanation of array
 formulas](http://office.microsoft.com/en-us/excel-help/introducing-array-formula
@@ -47,7 +49,9 @@ Consider this example using [GoogleHistory](web#google_history):
 
 ---
 
-**How do I [do such-and-such] ?**  
+How do I [do such-and-such] ?
+-----------------------------
+
 First, try using the function wizard in Excel. All functions have descriptions
 of what values they return and accept. That is, type something like `=Quote(` in
 a cell in Excel, then hit the _f<sub>x</sub>_ key just above the worksheet (or
@@ -61,7 +65,9 @@ go ahead and [submit a new issue](https://github.com/brymck/finansu/issues/new).
 
 ---
 
-**How long will you support this?**  
+How long will you support this?
+-------------------------------
+
 Indefinitely but not always immediately. I developed this add-in in my spare
 time to address a real professional need, and I use it frequently. That said,
 there are two reasons for a loss of functionality in the quote import functions
@@ -86,13 +92,16 @@ _think_ they will be minimal.
 
 ---
 
-**Why is [Quote](web#quote) or [QuoteHistory](web#quote_history) only returning
-one value?**  
+Why is [Quote](web#quote) or [QuoteHistory](web#quote_history) only returning one value?
+----------------------------------------------------------------------------------------
+
 See [the section on array formulas](#array_formulas).
 
 ---
 
-**Can I use this at work, on other computer, etc.?**  
+Can I use this at work, on other computer, etc.?
+------------------------------------------------
+
 Hopefully. I'm unfamiliar with the access restrictions at different companies,
 but in general if you meet the [minimum requirements](faq#requirements) you
 should be fine. If there are real access limitations, feel free to [submit a new
@@ -105,12 +114,16 @@ collecting it behind the scenes.
 
 ---
 
-**What do I do if I notice an error?**  
+What do I do if I notice an error?
+----------------------------------
+
 Feel free to [submit a new issue](https://github.com/brymck/finansu/issues/new).
 
 ---
 
-**How can I contribute?**  
+How can I contribute?
+---------------------
+
 [Fork the repo](http://help.github.com/fork-a-repo/) and,
 after modifying the source to your satisfaction, [submit a
 pull request](http://help.github.com/send-pull-requests/). The

@@ -4,14 +4,14 @@ title: FinAnSu - Credits & Licensing
 ---
 
 Credits
--------
+=======
 
 This project depends on [Excel-Dna](http://exceldna.codeplex.com/), a very nifty
 tool which lets you utilize modern programming languages in Excel without the
 headache of [VSTO](http://en.wikipedia.org/wiki/Visual_Studio_Tools_for_Office).
 
 License
--------
+=======
 
 A [copy of this license](https://raw.github.com/brymck/finansu/master/LICENSE)
 is included in the source code.
