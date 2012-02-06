@@ -20,7 +20,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 [ComVisible(true)]
 public class MyRibbon : ExcelDna.Integration.CustomUI.ExcelRibbon
 {
-    private const string HELP_URI = "http://code.google.com/p/finansu/wiki/Introduction";
+    private const string HELP_URI = "http://brymck.github.com/finansu/";
 
     public override string GetCustomUI(string uiName)
     {
