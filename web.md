@@ -38,7 +38,7 @@ Returns the current quote for a security ID from Bloomberg, Google or Yahoo!
   * `frequency` is the number of seconds between update requests (if live_updating is `true`). Defaults to `15` seconds.
   * `show_headers` is whether to display the headers for each column. Defaults to `false`.
 
-http://www.brymck.com/images/finansu_live_quote.gif
+![FinAnSu in action](img/quote.gif)
 
 <a name="quote_params">QuoteParams</a>
 --------------------------------------
