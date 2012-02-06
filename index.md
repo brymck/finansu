@@ -249,19 +249,64 @@ Returns FinAnSu's intepretation of an abbreviated source name. Mostly for debugg
 
   * `source` is the name or abbreviation of the quote service.
 
-|| *Input* || *Output* ||
-|| (blank) || `"b"` ||
-|| `"b"` || `"b"` ||
-|| `"bb"` || `"b"` ||
-|| `"bberg"` || `"b"` ||
-|| `"bloomberg"` || `"b"` ||
-|| `"g"` || `"g"` ||
-|| `"goog"` || `"g"` ||
-|| `"google"` || `"g"` ||
-|| `"y"` || `"y"` ||
-|| `"yhoo"` || `"y"` ||
-|| `"yahoo"` || `"y"` ||
-|| `"yahoo!"` || `"y"` ||
+<table>
+  <thead>
+    <tr>
+      <th>Input</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>(blank)</td>
+      <td>`"b"`</td>
+    </tr>
+    <tr>
+      <td>`"b"`</td>
+      <td>`"b"`</td>
+    </tr>
+    <tr>
+      <td>`"bb"`</td>
+      <td>`"b"`</td>
+    </tr>
+    <tr>
+      <td>`"bberg"`</td>
+      <td>`"b"`</td>
+    </tr>
+    <tr>
+      <td>`"bloomberg"`</td>
+      <td>`"b"`</td>
+    </tr>
+    <tr>
+      <td>`"g"`</td>
+      <td>`"g"`</td>
+    </tr>
+    <tr>
+      <td>`"goog"`</td>
+      <td>`"g"`</td>
+    </tr>
+    <tr>
+      <td>`"google"`</td>
+      <td>`"g"`</td>
+    </tr>
+    <tr>
+      <td>`"y"`</td>
+      <td>`"y"`</td>
+    </tr>
+    <tr>
+      <td>`"yhoo"`</td>
+      <td>`"y"`</td>
+    </tr>
+    <tr>
+      <td>`"yahoo"`</td>
+      <td>`"y"`</td>
+    </tr>
+    <tr>
+      <td>`"yahoo!"`</td>
+      <td>`"y"`</td>
+    </tr>
+  </tbody>
+</table>
 
 #summary FinAnSu's web import functionality for quote history.
 
@@ -499,21 +544,87 @@ Returns the options Greek for a particular sensitivity. _(Note: All functions fo
   * `dividend_yield` is the annual dividend yield.
   * `volatility` is the implied volatility at expiry.
 
-|| *Function* || *Sensitivity of `__`* || *to changes in `__`* ||
-|| `=BSDelta()` || option price || underlying price ||
-|| `=Vega()` || option price || volatility ||
-|| `=Theta()` || option price || passage of time ||
-|| `=Rho()` || option price || risk-free rate ||
-|| `=Gamma()` || option price || delta ||
-|| `=Vanna()` || delta || volatility ||
-|| `=Charm()` || delta || passage of time ||
-|| `=Speed()` || gamma || underlying price ||
-|| `=Zomma()` || gamma || volatility ||
-|| `=Color()` || gamma || passage of time ||
-|| `=DvegaDtime()` || vega || passage of time ||
-|| `=Vomma()` || vega || volatility ||
-|| `=DualDelta()` || option price || strike price ||
-|| `=DualGamma()` || delta || strike price ||
+<table>
+  <thead>
+    <tr>
+      <th>*Function*</th>
+      <th>*Sensitivity of `__`*</th>
+      <th>*to changes in `__`*</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`=BSDelta()`</td>
+      <td>option price</td>
+      <td>underlying price</td>
+    </tr>
+    <tr>
+      <td>`=Vega()`</td>
+      <td>option price</td>
+      <td>volatility</td>
+    </tr>
+    <tr>
+      <td>`=Theta()`</td>
+      <td>option price</td>
+      <td>passage of time</td>
+    </tr>
+    <tr>
+      <td>`=Rho()`</td>
+      <td>option price</td>
+      <td>risk-free rate</td>
+    </tr>
+    <tr>
+      <td>`=Gamma()`</td>
+      <td>option price</td>
+      <td>delta</td>
+    </tr>
+    <tr>
+      <td>`=Vanna()`</td>
+      <td>delta</td>
+      <td>volatility</td>
+    </tr>
+    <tr>
+      <td>`=Charm()`</td>
+      <td>delta</td>
+      <td>passage of time</td>
+    </tr>
+    <tr>
+      <td>`=Speed()`</td>
+      <td>gamma</td>
+      <td>underlying price</td>
+    </tr>
+    <tr>
+      <td>`=Zomma()`</td>
+      <td>gamma</td>
+      <td>volatility</td>
+    </tr>
+    <tr>
+      <td>`=Color()`</td>
+      <td>gamma</td>
+      <td>passage of time</td>
+    </tr>
+    <tr>
+      <td>`=DvegaDtime()`</td>
+      <td>vega</td>
+      <td>passage of time</td>
+    </tr>
+    <tr>
+      <td>`=Vomma()`</td>
+      <td>vega</td>
+      <td>volatility</td>
+    </tr>
+    <tr>
+      <td>`=DualDelta()`</td>
+      <td>option price</td>
+      <td>strike price</td>
+    </tr>
+    <tr>
+      <td>`=DualGamma()`</td>
+      <td>delta</td>
+      <td>strike price</td>
+    </tr>
+  </tbody>
+</table>
 
 #summary Options valuation for American and Bermudan options.
 
@@ -844,18 +955,70 @@ Currency Formats
 
 The `Currency` drop-down in the `Formatting` group of the Excel Ribbon will format cells in accounting format with the appropriate currency symbol and decimal places.
 
-|| *Label*               || *Symbol* || *Decimals* ||
-|| `Whole number`        ||          ||     0      ||
-|| `Two decimal places`  ||          ||     2      ||
-|| `Four decimal places` ||          ||     4      ||
-|| `Dollars`             ||    $     ||     0      ||
-|| `Dollars and cents`   ||    $     ||     2      ||
-|| `Euros`               ||    €     ||     0      ||
-|| `Euros and cents`     ||    €     ||     2      ||
-|| `Yen`                 ||    ¥     ||     0      ||
-|| `Yen and sen`         ||    ¥     ||     2      ||
-|| `Pounds`              ||    £     ||     0      ||
-|| `Pounds and pence`    ||    £     ||     2      ||
+<table>
+  <thead>
+    <tr>
+      <th>*Label*              </th><th>*Symbol*</th><th>*Decimals*</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`Whole number`</td>
+      <td></td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>`Two decimal places` </td>
+      <td></td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>`Four decimal places`</td>
+      <td></td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>`Dollars`</td>
+      <td>$</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>`Dollars and cents`</td>
+      <td>$</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>`Euros`</td>
+      <td>€</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>`Euros and cents`</td>
+      <td>€</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>`Yen`</td>
+      <td>¥</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>`Yen and sen`</td>
+      <td>¥</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>`Pounds`</td>
+      <td>£</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>`Pounds and pence`</td>
+      <td>£</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
 
 #summary Layout formats.
 
