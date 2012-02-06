@@ -87,14 +87,16 @@ This project has the following dependencies (that don't come bundled with the re
    Once it's installed, make sure you have Bundler (`gem install bundler` in a
    command prompt). Then run `bundle update` in the top directory of the repo
    (the same folder as this readme).
-2. [7za](http://www.7-zip.org/download.html) -- the command line version of
-   7-Zip -- installed somewhere in your `%Path%`.
+2. [7za](http://www.7-zip.org/download.html), the command line version of 7-Zip,
+   installed somewhere in your `%Path%`.
 3. [Git](http://help.github.com/set-up-git-redirect)
 4. And anything like Windows, Office or .NET 4 if you want to do any testing or
    compilation
 5. [NUnit](http://www.nunit.org/index.php?p=download) if you plan to run any
    tests. And if you do, make certain that `nunit-console.exe` can be found on
    the system `%Path%`.
+6. The [File utility](http://gnuwin32.sourceforge.net/packages/file.htm) from
+   GnuWin32, again somewhere on your `%Path%`.
 
 In Action
 ---------
