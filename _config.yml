@@ -1,2 +1,4 @@
 markdown: rdiscount
 pygments: true
+exclude:
+- README.md
