@@ -4,11 +4,11 @@ title: Other
 description: Miscellaneous functions in FinAnSu
 ---
 
-Sorting
-=======
+<a name="sorting">Sorting</a>
+=============================
 
 _Note: Before proceeding, please read the section on [array
-formulas](faq.html#array_formulas) if you are unfamiliar with their usage._
+formulas](faq#array_formulas) if you are unfamiliar with their usage._
 
 AutoSort
 --------

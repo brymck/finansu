@@ -4,8 +4,66 @@ title: Yield Curves
 description: FinAnSu yield curve interpolation and manipulation functions
 ---
 
-Yield Curves
-============
+<a name="fra">Forward Rate Agreements</a>
+=========================================
+
+FRA
+---
+
+Returns the theoretical forward rate between tenor A and tenor B.
+
+{% highlight vbnet %}
+=FRA(rate_a, ttm_a, rate_a, rate_b, basis)
+{% endhighlight %}
+
+  * `rate_a` is the rate through point A.
+  * `ttm_a` is time in days to point A.
+  * `rate_b` is the rate through point B.
+  * `ttm_b` is time in days to point B.
+  * `basis` is the basis in days (`360`, `365`, etc.).
+
+FRAFromFXLong
+-------------
+
+For short-term contracts with a maturity of less than one year from now, returns
+the theoretical long forward rate given a currency forward and FX rates.
+
+{% highlight vbnet %}
+=FRAFromFXLong(fx_spot, fx_swap_long, fx_swap_short, foreign_fra,
+               start_days, end_days, domestic_basis, foreign_basis)
+{% endhighlight %}
+
+  * `fx_spot` is the foreign exchange spot rate.
+  * `fx_swap_long` is the long foreign exchange swap.
+  * `fx_swap_short` is the short foreign exchange swap.
+  * `foreign_fra` is the foreign forward rate agreement.
+  * `start_days` is the time in days to the start of the FRA.
+  * `end_days` is the time in days to the end of the FRA.
+  * `domestic_basis` is the domestic basis in days (`360`, `365`, etc.).
+  * `foreign_basis` is the foreign basis in days (`360`, `365`, etc.).
+
+FRAFromFXShort
+--------------
+
+For short-term contracts with a maturity of less than one year from now, returns
+the theoretical short forward rate given a currency forward and FX rates.
+
+{% highlight vbnet %}
+=FRAFromFXShort(fx_spot, fx_swap_long, fx_swap_short, foreign_fra,
+                start_days, end_days, domestic_basis, foreign_basis)
+{% endhighlight %}
+
+  * `fx_spot` is the foreign exchange spot rate.
+  * `fx_swap_long` is the long foreign exchange swap.
+  * `fx_swap_short` is the short foreign exchange swap.
+  * `foreign_fra` is the foreign forward rate agreement.
+  * `start_days` is the time in days to the start of the FRA.
+  * `end_days` is the time in days to the end of the FRA.
+  * `domestic_basis` is the domestic basis in days (`360`, `365`, etc.).
+  * `foreign_basis` is the foreign basis in days (`360`, `365`, etc.).
+
+<a name="interpolation">Yield Curve Interpolation</a>
+=====================================================
 
 ContinuousInterpolation
 -----------------------

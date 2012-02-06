@@ -47,3 +47,14 @@
   background: url(../images/nav-rule.png) no-repeat 0px 50%;
   line-height: 1.4em;
 }
+
+ol, ul {
+  padding-left: 2em !important;
+}
+
+a[name] {
+  color: #000000 !important;
+}
+a[name]:hover {
+  text-decoration: none;
+}

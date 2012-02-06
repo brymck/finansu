@@ -8,10 +8,10 @@ Real-Time Security Quotes
 =========================
 
 _Note: Before proceeding, please read the section on [array
-formulas](faq.html#array_formulas) if you are unfamiliar with their usage._
+formulas](faq#array_formulas) if you are unfamiliar with their usage._
 
-Quote
------
+<a name="quote">Quote</a>
+-------------------------
 
 Returns the current quote for a security ID from Bloomberg, Google or Yahoo!
 
@@ -33,17 +33,17 @@ Returns the current quote for a security ID from Bloomberg, Google or Yahoo!
 
   * `security_id` is the security ID from the quote service.
   * `source` is the name or abbreviation of the quote service (`"b"`, `"Bloomberg"`, `"g"`, `"Google"`, `"y"`, `"Yahoo"`, etc.). Defaults to `"Bloomberg"`.
-  * `params` is a list of which values to return. Accepts any combination of `"px%dtbahlv"` (price, change, % change, date, time, bid, ask, high, low, volume). Bid/ask are not available through Google. Use [=QuoteParams()](#QuoteParams) for help if necessary. Defaults to price.
+  * `params` is a list of which values to return. Accepts any combination of `"px%dtbahlv"` (price, change, % change, date, time, bid, ask, high, low, volume). Bid/ask are not available through Google. Use [=QuoteParams()](#quote_params) for help if necessary. Defaults to price.
   * `live_updating` is whether you want this function to return continuously stream live quotes to the cell. Defaults to `false`.
   * `frequency` is the number of seconds between update requests (if live_updating is `true`). Defaults to `15` seconds.
   * `show_headers` is whether to display the headers for each column. Defaults to `false`.
 
 http://www.brymck.com/images/finansu_live_quote.gif
 
-QuoteParams
------------
+<a name="quote_params">QuoteParams</a>
+--------------------------------------
 
-Builds a text string for use in [=Quote()](#Quote) designating which values you would like returned.
+Builds a text string for use in [=Quote()](#quote) designating which values you would like returned.
 
 {% highlight vbnet %}
 =QuoteParams(price, change, pct_change, date, time, bid, ask, open, high, low, volume)
@@ -68,22 +68,22 @@ Builds a text string for use in [=Quote()](#Quote) designating which values you 
 LiveQuote
 ---------
 
-Same as [Quote](#Quote) with the `live_updating` argument equal to `true`.
+Same as [Quote](#quote) with the `live_updating` argument equal to `true`.
 
 BloombergQuote
 --------------
 
-Same as [Quote](#Quote) with the `source` argument equal to `"Bloomberg"`.
+Same as [Quote](#quote) with the `source` argument equal to `"Bloomberg"`.
 
 GoogleQuote
 -----------
 
-Same as [Quote](#Quote) with the `source` argument equal to `"Google"`.
+Same as [Quote](#quote) with the `source` argument equal to `"Google"`.
 
 YahooQuote
 ----------
 
-Same as [Quote](#Quote) with the `source` argument equal to `"Yahoo"`.
+Same as [Quote](#quote) with the `source` argument equal to `"Yahoo"`.
 
 FullTicker
 ----------
@@ -177,8 +177,8 @@ Returns FinAnSu's intepretation of an abbreviated source name. Mostly for debugg
 Quote History
 =============
 
-QuoteHistory
-------------
+<a name="quote_history">QuoteHistory</a>
+----------------------------------------
 
 Returns the historical date, open, high, low, close, volume and adjusted price
 for a security ID from the selected quotes provider.
@@ -214,17 +214,17 @@ for a security ID from the selected quotes provider.
   * `names` is a list of which values to return. Accepts any combination of
     `"dohlcva"` (date, open, high, low, close, volume, adj
     price). Adj price is available only through Yahoo!. Use
-    [=QuoteHistoryParams()](#QuoteHistoryParams) for help if necessary. Defaults
+    [=QuoteHistoryParams()](#quote_history_params) for help if necessary. Defaults
     to all.
   * `show_headers` is whether to display the headers for each column. Defaults
     to `false`.
   * `date_order` is whether to sort dates in ascending chronological order.
     Defaults to `false`.
 
-QuoteHistoryParams
-------------------
+<a name="quote_history_params">QuoteHistoryParams</a>
+-----------------------------------------------------
 
-Builds a text string for use in [=QuoteHistory()](#QuoteHistory) designating
+Builds a text string for use in [=QuoteHistory()](#quote_history) designating
 which values you would like returned.
 
 {% highlight vbnet %}
@@ -244,22 +244,22 @@ which values you would like returned.
   * `adj_close` is whether you wish to return the day's closing price.
 
 
-YahooHistory
-------------
+<a name="yahoo_history">YahooHistory</a>
+----------------------------------------
 
-Same as [QuoteHistory](#QuoteHistory) with the `source` argument equal to
+Same as [QuoteHistory](#quote_history) with the `source` argument equal to
 `"yahoo"`.
 
-GoogleHistory
--------------
+<a name="google_history">GoogleHistory</a>
+------------------------------------------
 
-Same as [QuoteHistory](#QuoteHistory) with the `source` argument equal to
+Same as [QuoteHistory](#quote_history) with the `source` argument equal to
 `"google"`. Note that Google does not contain easily accessible data for things
 like indexes (such as the S&P 500). If you require such information, I recommend
-using [YahooHistory](#YahooHistory) instead.
+using [yahoo_history](#yahoo_history) instead.
 
-H15History
-----------
+<a name="h15_history">H15History</a>
+------------------------------------
 
 Returns information from the Fed's
 [http://www.federalreserve.gov/releases/h15/update/ H.15 Statistical Release].
@@ -293,8 +293,8 @@ _\* Yes, I'm aware that regex is an ugly tool for the job. However, it's the
 easiest to maintain and provides some performance benefits over the HTML/XML
 parsers I considered._
 
-Import
-------
+<a name="import">Import</a>
+---------------------------
 
 Returns a horizontal array of values based on a URL and regular expression.
 
@@ -318,10 +318,10 @@ Returns a horizontal array of values based on a URL and regular expression.
 GetWebData
 ----------
 
-Same as [Import](#Import) with the `live_updating` argument equal to `false`.
+Same as [Import](#import) with the `live_updating` argument equal to `false`.
 
-ImportCSV
----------
+<a name="import_csv">ImportCSV</a>
+----------------------------------
 
 Returns an array of values from a CSV.
 

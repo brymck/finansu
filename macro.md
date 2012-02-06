@@ -4,11 +4,11 @@ title: Macros
 description: Macros available to Excel through FinAnSu
 ---
 
-Macros
-======
+Formatting
+==========
 
-Currency Formats
-----------------
+<a name="currencies">Currencies</a>
+-----------------------------------
 
 The `Currency` drop-down in the `Formatting` group of the Excel Ribbon will
 format cells in accounting format with the appropriate currency symbol and
@@ -85,6 +85,9 @@ Accounting Underline
 --------------------
 
 Formats a cell with a single accounting underline.
+
+<a name="layout">Layout</a>
+===========================
 
 Center Across Selection
 -----------------------

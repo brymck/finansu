@@ -7,7 +7,7 @@ description: Frequently asked questions about FinAnSu
 Frequently Asked Questions
 ==========================
 
-**<a title="array_formulas">How do I get multiple values from FinAnSu functions?</a>**  
+**<a name="array_formulas">How do I get multiple values from FinAnSu functions?</a>**  
 Many functions, particularly import functions, require the use of
 array formulas. Microsoft has a good, long-form [explanation of array
 formulas](http://office.microsoft.com/en-us/excel-help/introducing-array-formula
