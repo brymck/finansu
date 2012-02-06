@@ -1,6 +1,8 @@
 .DS_Store
 .hg
 .hgignore
+_site
 bin
+css
+img
 obj
-push.bat
