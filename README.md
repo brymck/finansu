@@ -31,21 +31,21 @@ FinAnSu aims to provide user-friendly tools for use in financial applications.
 The add-in is in its development stages, but it currently offers:
 
   * *Live, streaming [web import](http://brymck.github.com/finansu/web)
-    capabilities* (Excel 2002+), including custom functions for easily          
-    [importing security prices](http://brymck.github.com/finansu/web#quote)     
-    from Bloomberg.com, Google Finance and Yahoo! Finance                       
+    capabilities* (Excel 2002+), including custom functions for easily
+    [importing security prices](http://brymck.github.com/finansu/web#quote)
+    from Bloomberg.com, Google Finance and Yahoo! Finance
   * Functions that can [parse
-    CSVs](http://brymck.github.com/finansu/web#import_csv) on the web,          
-    including custom functions to easily import stock quote data from           
-    [Google Finance](http://brymck.github.com/finansu/web#google_history)       
-    and instrument data from the [Fed H.15                                      
-    release](http://brymck.github.com/finansu/web#h15_history) (yields for Fed  
-    Funds, commercial paper, Treasuries, interest-rate swaps, etc.).            
+    CSVs](http://brymck.github.com/finansu/web#import_csv) on the web,
+    including custom functions to easily import stock quote data from
+    [Google Finance](http://brymck.github.com/finansu/web#google_history)
+    and instrument data from the [Fed H.15
+    release](http://brymck.github.com/finansu/web#h15_history) (yields for Fed
+    Funds, commercial paper, Treasuries, interest-rate swaps, etc.).
   * Basic options pricing, including
-    [Black-Scholes](http://brymck.github.com/finansu/options#black_scholes),    
-    [the options Greeks](http://brymck.github.com/finansu/options#greeks)       
-    and [a few more complex options                                             
-    models](http://brymck.github.com/finansu/options#complex)                   
+    [Black-Scholes](http://brymck.github.com/finansu/options#black_scholes),
+    [the options Greeks](http://brymck.github.com/finansu/options#greeks)
+    and [a few more complex options
+    models](http://brymck.github.com/finansu/options#complex)
   * A bit on [FRAs](http://brymck.github.com/finansu/yield_curve#fra) (forward
     rate agreements)
   * A continuously compounded rate
