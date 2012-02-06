@@ -91,4 +91,4 @@ This project has the following dependencies (that don't come bundled with the re
 In Action
 ---------
 
-![FinAnSu in action](https://github.com/brymck/finansu/raw/master/img/quote.gif)
+![FinAnSu in action](https://s3.amazonaws.com/finansu/quote.gif)
