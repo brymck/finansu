@@ -28,7 +28,7 @@ FinAnSu aims to provide user-friendly tools for use in financial applications.
 The add-in is in its development stages, but it currently offers:
 
   * <b>Live, streaming <a href="http://brymck.github.com/finansu/web">web
-    import]</a> capabilities</b> (Excel 2002+), including
+    import</a> capabilities</b> (Excel 2002+), including
     custom functions for easily [importing security
     prices](http://brymck.github.com/finansu/web#quote) from Bloomberg.com,
     Google Finance and Yahoo! Finance
