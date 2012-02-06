@@ -7,8 +7,9 @@ description: An introduction to FinAnSu
 What Does It Do?
 ================
 
-FinAnSu aims to provide user-friendly tools for use in financial applications.
-The add-in is in its development stages, but it currently offers:
+[FinAnSu](https://github.com/brymck/finansu) aims to provide user-friendly tools
+for use in financial applications. The add-in is in its development stages, but
+it currently offers:
 
   * *Live, streaming [web import](web) capabilities* (Excel 2002+), including
     custom functions for easily [importing security prices](web#quote) from
