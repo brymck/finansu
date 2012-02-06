@@ -256,13 +256,13 @@ Same as [QuoteHistory](#quote_history) with the `source` argument equal to
 Same as [QuoteHistory](#quote_history) with the `source` argument equal to
 `"google"`. Note that Google does not contain easily accessible data for things
 like indexes (such as the S&P 500). If you require such information, I recommend
-using [yahoo_history](#yahoo_history) instead.
+using [YahooHistory](#yahoo_history) instead.
 
 <a name="h15_history">H15History</a>
 ------------------------------------
 
 Returns information from the Fed's
-[http://www.federalreserve.gov/releases/h15/update/ H.15 Statistical Release].
+[H.15 Statistical Release](http://www.federalreserve.gov/releases/h15/update/).
 
 {% highlight vbnet %}
 =H15History(instrument_id, frequency)

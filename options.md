@@ -115,7 +115,7 @@ inputs are used in a particular Greek's calculation.)_
 =BSDelta(call_put_flag, stock_price, strike_price, time_to_expiry, risk_free_rate, dividend_yield, volatility)
 
 ' Returns 0.37
-=BSDelta("c", 60, 65, 0.25, 8%, 0%, 30%)
+=BSDelta("c", 60, 65, 0.25, 0.08, 0, 0.3)
 {% endhighlight %}
 
   * `call_put_flag` is whether the instrument is a call (`"c"`) or a put (`"p"`).
