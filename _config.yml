@@ -1,4 +1,7 @@
 markdown: rdiscount
 pygments: true
 exclude:
+- Gemfile
+- Gemfile.lock
+- Rakefile
 - README.md

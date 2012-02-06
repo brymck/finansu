@@ -2,13 +2,27 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>{{ page.title }}</title>
+  <meta content="{{ page.description }}" name='description'>
+  <title>FinAnSu - {{ page.title }}</title>
   <link rel="stylesheet" href="css/github/documentation.css" type="text/css">
   <link rel="stylesheet" href="css/github/pygments.css" type="text/css">
   <link rel="stylesheet" href="css/master.css" type="text/css">
 </head>
 <body>
   <div class="main"> 
+      <div id="header-wrapper">
+        <div id="header" class="basic" >
+          <div class="site">
+            <a class="logo" href="/"><img src="img/logo.png" height="55" width="112"></a>
+            <div class="topsearch">
+{% capture toc %}
+  {% include toc.md %}
+{% endcapture %}
+{{ toc | unindent | markdownify }}
+            </div>
+          </div>
+        </div>
+      </div>
     <div id="wrapper"> 
       <div id="content" class="site">
         <div class="wikistyle">
@@ -16,6 +30,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div id="footer">
+    <p>© <span id="year">2012</span> Bryan McKelvey</p>
   </div>
 </body>
 </html>
