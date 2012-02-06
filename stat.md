@@ -24,7 +24,9 @@ standard deviation of one).
 
 {% highlight vbnet %}
 =CND(z)
-=CND(0.5) // returns 0.6915
+
+' Returns 0.6915
+=CND(0.5)
 {% endhighlight %}
 
   * `z` is the value for which you want the distribution.
@@ -36,7 +38,9 @@ Returns the inverse cumulative normal distribution function.
 
 {% highlight vbnet %}
 =CNDEV(U)
-=CNDEV(0.5) // returns 0
+
+' Returns 0
+=CNDEV(0.5)
 {% endhighlight %}
 
   * `U` is the value for which you want the distribution.
@@ -48,7 +52,9 @@ Returns the normal distribution function.
 
 {% highlight vbnet %}
 =ND(x)
-=ND(0.5) // returns 0.3521
+
+' Returns 0.3521
+=ND(0.5)
 {% endhighlight %}
 
   * `x` is the value for which you want the distribution.
@@ -60,7 +66,9 @@ Returns the probability density function.
 
 {% highlight vbnet %}
 =PDF(z)
-=PDF(0.5) // returns 0.3521
+
+' Returns 0.3521
+=PDF(0.5)
 {% endhighlight %}
 
 * `z` is the value for which you want the distribution.
