@@ -10,8 +10,13 @@ msbuild :build do |msb|
 end
 
 # This requires that nunit-console.exe is in your %Path$
-desc "NUnit Test Runner Example"
+desc "Run NUnit tests"
 nunit :test do |nunit|
   nunit.command = "nunit-console.exe"
   nunit.assemblies "FinAnSu.Test/bin/Release/FinAnSu.Test.dll"
+end
+
+desc "The current version"
+task :version do
+  puts File.read("VERSION")
 end
