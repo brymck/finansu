@@ -7,6 +7,10 @@ FinAnSu
     <td><a href="http://brymck.herokuapp.com">brymck.herokuapp.com</a></td>
   </tr>
   <tr>
+    <th>Documentation</th>
+    <td><a href="http://brymck.github.com/finansu/">brymck.github.com/finansu/</a></td>
+  </tr>
+  <tr>
     <th>Author</th>
     <td>Bryan McKelvey</td>
   </tr>
@@ -23,36 +27,39 @@ FinAnSu
 FinAnSu aims to provide user-friendly tools for use in financial applications.
 The add-in is in its development stages, but it currently offers:
 
-  * Live, streaming [web import](http://code.google.com/p/finansu/wiki/WebData
-    capabilities) (Excel 2002+), including custom functions for easily
-    [importing security prices](http://code.google.com/p/finansu/wiki/Quotes)
-    from Bloomberg.com, Google Finance and Yahoo! Finance
+FinAnSu aims to provide user-friendly tools for use in financial applications.
+The add-in is in its development stages, but it currently offers:
+
+  * *Live, streaming [web import](http://brymck.github.com/finansu/web)
+    capabilities* (Excel 2002+), including custom functions for easily          
+    [importing security prices](http://brymck.github.com/finansu/web#quote)     
+    from Bloomberg.com, Google Finance and Yahoo! Finance                       
   * Functions that can [parse
-    CSVs](http://code.google.com/p/finansu/wiki/WebData#ImportCSV on the web,
-    including custom functions to easily import stock quote data from [Google
-    Finance](http://code.google.com/p/finansu/wiki/Quotes#GoogleHistory)
-    and instrument data from the [Fed H.15
-    release](http://code.google.com/p/finansu/wiki/Quotes#H15History) (yields
-    for Fed Funds, commercial paper, Treasuries, interest-rate swaps, etc.).
+    CSVs](http://brymck.github.com/finansu/web#import_csv) on the web,          
+    including custom functions to easily import stock quote data from           
+    [Google Finance](http://brymck.github.com/finansu/web#google_history)       
+    and instrument data from the [Fed H.15                                      
+    release](http://brymck.github.com/finansu/web#h15_history) (yields for Fed  
+    Funds, commercial paper, Treasuries, interest-rate swaps, etc.).            
   * Basic options pricing, including
-    [Black-Scholes](http://code.google.com/p/finansu/wiki/BlackScholes),
-    [the options Greeks](http://code.google.com/p/finansu/wiki/Greeks)
-    and [a few more complex options
-    models](http://code.google.com/p/finansu/wiki/AmericanBermudan)
-  * A bit on [FRAs](http://code.google.com/p/finansu/wiki/FRAs) (forward rate
-    agreements)
+    [Black-Scholes](http://brymck.github.com/finansu/options#black_scholes),    
+    [the options Greeks](http://brymck.github.com/finansu/options#greeks)       
+    and [a few more complex options                                             
+    models](http://brymck.github.com/finansu/options#complex)                   
+  * A bit on [FRAs](http://brymck.github.com/finansu/yield_curve#fra) (forward
+    rate agreements)
   * A continuously compounded rate
-    [interpolator](http://code.google.com/p/finansu/wiki/Interpolation) (need to
-    add more: linear, cubic, cubic spline, etc.)
+    [interpolator](http://brymck.github.com/finansu/yield_curve#interpolation)
+    (need to add more: linear, cubic, cubic spline, etc.)
   * A Federal Reserve holiday calculator (need to add more for different
     calendars, as well as roll date conventions)
   * A handful of tools for converting between discount factors and forward rates
-  * Function to [automatically sort
-    ranges](http://code.google.com/p/finansu/wiki/Sorting) that contain rows and
-    columns of data
+  * Function to [automatically
+    sort](http://brymck.github.com/finansu/other#sorting) ranges that contain rows
+    and columns of data
   * Some formatting macros for
-    [currencies](http://code.google.com/p/finansu/wiki/Currencies) and [a few
-    layout options](http://code.google.com/p/finansu/wiki/Layout) that aren't
+    [currencies](http://brymck.github.com/finansu/macro#currencies) and [a few
+    layout options](http://brymck.github.com/finansu/macro#layout) that aren't
     easily accessible in Excel
 
 Requirements
@@ -91,4 +98,4 @@ This project has the following dependencies (that don't come bundled with the re
 In Action
 ---------
 
-![FinAnSu in action](https://s3.amazonaws.com/finansu/quote.gif)
+![FinAnSu in action](http://brymck.github.com/finansu/img/quote.gif)
