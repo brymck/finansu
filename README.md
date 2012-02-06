@@ -92,6 +92,9 @@ This project has the following dependencies (that don't come bundled with the re
 3. [Git](http://help.github.com/set-up-git-redirect)
 4. And anything like Windows, Office or .NET 4 if you want to do any testing or
    compilation
+5. [NUnit](http://www.nunit.org/index.php?p=download) if you plan to run any
+   tests. And if you do, make certain that `nunit-console.exe` can be found on
+   the system `%Path%`.
 
 In Action
 ---------
