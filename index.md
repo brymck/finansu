@@ -240,7 +240,7 @@ Returns !FinAnSu's interpretation of an abbreviated security ID. Mostly for debu
 `ShortenSource`
 ---------------
 
-Returns !FinAnSu's intepretation of an abbreviated source name. Mostly for debugging purposes.
+Returns FinAnSu's intepretation of an abbreviated source name. Mostly for debugging purposes.
 
 ```
 =ShortenSource(source)
