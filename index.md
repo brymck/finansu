@@ -56,38 +56,32 @@ Purpose
 Frequently Asked Questions
 --------------------------
 
-#### How do I `[`do such-and-such`]` ?
+**How do I [do such-and-such] ?**  
+First, try using the function wizard in Excel. All functions have descriptions of what values they return and accept. That is, type something like `=Quote(` in a cell in Excel, then hit the _f,,x,,_ key just above the worksheet (or press `Ctrl+A`).
 
-  First, try using the function wizard in Excel. All functions have descriptions of what values they return and accept. That is, type something like `=Quote(` in a cell in Excel, then hit the _f,,x,,_ key just above the worksheet (or press `Ctrl+A`).
+If that's confusing, check the documentation here and the [Examples worksheet](http://finansu.googlecode.com/hg/FinAnSu/Examples.xls).
 
-  If that's confusing, check the documentation here and the [Examples worksheet](http://finansu.googlecode.com/hg/FinAnSu/Examples.xls).
+If none of that helps or if you have any questions or suggestions for clarity, go ahead and email me. My contact information is [below](#Contact_Information).
 
-  If none of that helps or if you have any questions or suggestions for clarity, go ahead and email me. My contact information is [below](#Contact_Information).
-
-How long will you support this?
--------------------------------
-
-  Indefinitely. I developed this add-in in my spare time to address a real professional need, and I use it daily. That said, there are two reasons for a loss of functionality in the quote import functions specifically, neither of which I control:
+**How long will you support this?**  
+Indefinitely but not always immediately. I developed this add-in in my spare time to address a real professional need, and I use it frequently. That said, there are two reasons for a loss of functionality in the quote import functions specifically, neither of which I control:
 
   * *Temporary:* Bloomberg, Google or Yahoo! change the setup of their website such that I have to change how I parse data from them. This is extremely rare; I anticipate it happening maybe once every few years. When it does, it may take a _brief_ while before I notice and update the program.
 
   * *Permanent:* Bloomberg, Google or Yahoo! stop publishing financial data publicly. That said, if you change the `source` parameter for functions like [Quote](Quotes#Quote) or [QuoteHistory](QuoteHistory#QuoteHistory), very often you can find an alternate source. Of course, losing _all three_ of them would be a devastating [Black Swan](http://en.wikipedia.org/wiki/Black_swan_theory). You know, one of those "once-in-a-million-years" events (i.e. a truly unpredictable misfortune for which we assume a ridiculously optimistic probability of avoidance).
 
-  There may also be some disruptions in different Excel or .NET versions, but I _think_ they will be minimal.
+There may also be some disruptions in different Excel or .NET versions, but I _think_ they will be minimal.
 
-#### Why is [Quote](Quotes#Quote) or [QuoteHistory](Quotes#QuoteHistory) only returning one value?
+**Why is [Quote](Quotes#Quote) or [QuoteHistory](Quotes#QuoteHistory) only returning one value?**  
+See [the section on array formulas](ArrayFormulas).
 
-  See [the section on array formulas](ArrayFormulas).
+**Can I use this at work, on other computer, etc.?**  
+Hopefully. I'm unfamiliar with the access restrictions at different companies, but in general if you meet the [minimum requirements](#Requirements) you should be fine. If there are real access limitations, feel free to [inform me](#Contact_Information), but I don't know how much I can do about it.
 
-#### Can I use this at work, on other computer, etc.?
+Also, this application does _not_ transmit any usage data to me or even connect to any servers owned by me. Feedback is always appreciated, but I'm not collecting it behind the scenes.
 
-  Hopefully. I'm unfamiliar with the access restrictions at different companies, but in general if you meet the [minimum requirements](#Requirements) you should be fine. If there are real access limitations, feel free to [inform me](#Contact_Information), but I don't know how much I can do about it.
-
-  Also, this application does _not_ transmit any usage data to me or even connect to any servers owned by me. Feedback is always appreciated, but I'm not collecting it behind the scenes.
-
-#### What do I do if I notice an error?
-
-  Either [email me](#Contact_Information) or [enter a new issue](http://code.google.com/p/finansu/issues/entry). There are some very real errors out there, and in the long-run the fix is _usually_ better solved on my end.
+**What do I do if I notice an error?**  
+Either [email me](#Contact_Information) or [enter a new issue](http://code.google.com/p/finansu/issues/entry). There are some very real errors out there, and in the long-run the fix is _usually_ better solved on my end.
 
 ----
 
@@ -547,9 +541,9 @@ Returns the options Greek for a particular sensitivity. _(Note: All functions fo
 <table>
   <thead>
     <tr>
-      <th>*Function*</th>
-      <th>*Sensitivity of `__`*</th>
-      <th>*to changes in `__`*</td>
+      <th>Function</th>
+      <th>Sensitivity of __</th>
+      <th>to changes in __</td>
     </tr>
   </thead>
   <tbody>
