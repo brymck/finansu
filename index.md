@@ -34,7 +34,8 @@ title: FinAnSu
 
 #summary An introduction to FinAnSu.
 
-== Purpose ==
+Purpose
+-------
 
 !FinAnSu aims to provide user-friendly tools for use in financial applications. The add-in is in its development stages, but it currently offers:
 
@@ -52,9 +53,10 @@ title: FinAnSu
 
 ----
 
-== Frequently Asked Questions ==
+Frequently Asked Questions
+--------------------------
 
-==== How do I `[`do such-and-such`]` ? ====
+#### How do I `[`do such-and-such`]` ?
 
   First, try using the function wizard in Excel. All functions have descriptions of what values they return and accept. That is, type something like `=Quote(` in a cell in Excel, then hit the _f,,x,,_ key just above the worksheet (or press `Ctrl+A`).
 
@@ -62,7 +64,8 @@ title: FinAnSu
 
   If none of that helps or if you have any questions or suggestions for clarity, go ahead and email me. My contact information is [#Contact_Information below].
 
-==== How long will you support this? ==== 
+How long will you support this?
+-------------------------------
 
   Indefinitely. I developed this add-in in my spare time to address a real professional need, and I use it daily. That said, there are two reasons for a loss of functionality in the quote import functions specifically, neither of which I control:
 
@@ -72,23 +75,24 @@ title: FinAnSu
 
   There may also be some disruptions in different Excel or .NET versions, but I _think_ they will be minimal.
 
-==== Why is [Quotes#Quote Quote] or [Quotes#QuoteHistory QuoteHistory] only returning one value? ====
+#### Why is [Quotes#Quote Quote] or [Quotes#QuoteHistory QuoteHistory] only returning one value?
 
   See [ArrayFormulas the section on array formulas].
 
-==== Can I use this at work, on other computer, etc.? ====
+#### Can I use this at work, on other computer, etc.?
 
   Hopefully. I'm unfamiliar with the access restrictions at different companies, but in general if you meet the [#Requirements minimum requirements] you should be fine. If there are real access limitations, feel free to [#Contact_Information inform me], but I don't know how much I can do about it.
 
   Also, this application does _not_ transmit any usage data to me or even connect to any servers owned by me. Feedback is always appreciated, but I'm not collecting it behind the scenes.
 
-==== What do I do if I notice an error? ====
+#### What do I do if I notice an error?
 
   Either [#Contact_Information email me] or [http://code.google.com/p/finansu/issues/entry enter a new issue]. There are some very real errors out there, and in the long-run the fix is _usually_ better solved on my end.
 
 ----
 
-== Requirements ==
+Requirements
+------------
 
   * [http://office.microsoft.com/excel/ Microsoft Excel for Windows]
   * [http://www.microsoft.com/downloads/details.aspx?FamilyID=9cfb2d51-5ff4-4491-b0e5-b386f32c0992 Microsoft .NET Framework 4]
@@ -96,7 +100,8 @@ title: FinAnSu
 
 ----
 
-== Contact Information ==
+Contact Information
+-------------------
 
 Name: Bryan !McKelvey
 
@@ -126,13 +131,15 @@ Email: [mailto:bryan.mckelvey@gmail.com bryan.mckelvey@gmail.com]
 
 Many import functions require the use of array formulas. Microsoft has a good, long-form [http://office.microsoft.com/en-us/excel-help/introducing-array-formulas-in-excel-HA001087290.aspx explanation of array formulas] that I recommend consulting if you'd like more information. Many (most?) Excel users never receive exposure to array formulas, but they are immensely useful for complex calculations.
 
-== What They Are ==
+What They Are
+-------------
 
 Instead of returning a single value, some complex Excel functions are capable of returning _multiple values_ to _multiple cells_. This helps save a lot of processor time as you only calculate the results once, and !FinAnSu uses it for several functions. For example, instead of pulling data from Google Finance to calculate one date, then doing the same and calculating the opening price, then repeating for every day you specify, !FinAnSu downloads the necessary information once, parses it, and outputs all results to a range of cells.
 
 Using these formulas requires a slightly different input method. First, you select the cells you want the formula to apply to, then you type the formula, and then you hit `Ctrl+Shift+Enter`.
 
-== An Example ==
+An Example
+----------
 
 Below is an example using [Quotes#GoogleHistory GoogleHistory].
 
@@ -147,11 +154,12 @@ http://finansu.googlecode.com/hg/img/array_formula.gif
 
 Note: Before proceeding, please read the section on [ArrayFormulas array formulas] if you are unfamiliar with their usage.
 
-== `Quote` ==
+`Quote`
+-------
 
 Returns the current quote for a security ID from Bloomberg, Google or Yahoo!
 
-{{{
+```
 =Quote(security_id, source, params, live_updating, frequency, show_headers)
 
 // Returns the current price of WFC from Bloomberg, updated every 15 seconds
@@ -165,7 +173,7 @@ Returns the current quote for a security ID from Bloomberg, Google or Yahoo!
 // Returns the current price, change and % change for WFC, including headers (static)
 =Quote("WFC", "b", "px%", , , true)
 =Quote("WFC", "b", QuoteParams(true, true, true), , , true)
-}}}
+```
 
   * `security_id` is the security ID from the quote service.
   * `source` is the name or abbreviation of the quote service (`"b"`, `"Bloomberg"`, `"g"`, `"Google"`, `"y"`, `"Yahoo"`, etc.). Defaults to `"Bloomberg"`.
@@ -176,17 +184,18 @@ Returns the current quote for a security ID from Bloomberg, Google or Yahoo!
 
 http://www.brymck.com/images/finansu_live_quote.gif
 
-== `QuoteParams` ==
+`QuoteParams`
+-------------
 
 Builds a text string for use in [#Quote =Quote()] designating which values you would like returned.
 
-{{{
+```
 =QuoteParams(price, change, pct_change, date, time, bid, ask, open, high, low, volume)
 
 // Returns the appropriate text string for use in =Quote(),
 // such that values for price, change and % change will be returned
 =QuoteParams(true, true, true)
-}}}
+```
 
   * `price` is whether you wish to return the current price or value.
   * `change` is whether you wish to return the day's change.
@@ -200,43 +209,49 @@ Builds a text string for use in [#Quote =Quote()] designating which values you w
   * `low` is whether you wish to return the day's low price.
   * `volume` is whether you wish to return the day's closing price.
 
-== `LiveQuote` ==
+`LiveQuote`
+-----------
 
 Same as [#Quote Quote] with the `live_updating` argument equal to `true`.
 
-== `BloombergQuote` ==
+`BloombergQuote`
+----------------
 
 Same as [#Quote Quote] with the `source` argument equal to `"Bloomberg"`.
 
-== `GoogleQuote` ==
+`GoogleQuote`
+-------------
 
 Same as [#Quote Quote] with the `source` argument equal to `"Google"`.
 
-== `YahooQuote` ==
+`YahooQuote`
+------------
 
 Same as [#Quote Quote] with the `source` argument equal to `"Yahoo"`.
 
-== `FullTicker` ==
+`FullTicker`
+------------
 
 Returns !FinAnSu's interpretation of an abbreviated security ID. Mostly for debugging purposes.
 
-{{{
+```
 =FullTicker(security_id, source, force_interpret)
 =FullTicker("WFC", "b", false) // returns "WFC"
-}}}
+```
 
   * `security_id` is the security ID from the quote service.
   * `source` is the name or abbreviation of the quote service (`"b"`, `"Bloomberg"`, `"g"`, `"Google"`, `"y"`, `"Yahoo"`, etc.). Defaults to `"Bloomberg"`.
   * `force_interpret` forces !FinAnSu to guess at a suffix if none exists if `force_interpret` is set to `true` (may result in errors).
 
-== `ShortenSource` ==
+`ShortenSource`
+---------------
 
 Returns !FinAnSu's intepretation of an abbreviated source name. Mostly for debugging purposes.
 
-{{{
+```
 =ShortenSource(source)
 =ShortenSource("bloomberg") // returns "b"
-}}}
+```
 
   * `source` is the name or abbreviation of the quote service.
 
@@ -258,11 +273,12 @@ Returns !FinAnSu's intepretation of an abbreviated source name. Mostly for debug
 
 Note: Before proceeding, please read the section on [ArrayFormulas array formulas] if you are unfamiliar with their usage.
 
-== `QuoteHistory` ==
+`QuoteHistory`
+--------------
 
 Returns the historical date, open, high, low, close, volume and adjusted price for a security ID from the selected quotes provider.
 
-{{{
+```
 =QuoteHistory(security_id, source, start_date, end_date, period, names, show_headers, date_order)
 
 // Returns date, OHLC, volume and adjusted close for WFC from Yahoo! Finance
@@ -278,7 +294,7 @@ Returns the historical date, open, high, low, close, volume and adjusted price f
 // for each day in 2010, in chronological order, with headers
 =QuoteHistory("WFC", "g", DATE(2010, 1, 1), DATE(2010, 12, 31), "d", "dcv", true, true)
 =GoogleHistory("WFC", DATE(2010, 1, 1), DATE(2010, 12, 31), "d", "dcv", true, true)
-}}}
+```
 
   * `security_id` is the security ID from the quote service.
   * `source` is the name or abbreviation of the quote service (g, Google, y, Yahoo, etc.). Defaults to Yahoo!.
@@ -289,17 +305,18 @@ Returns the historical date, open, high, low, close, volume and adjusted price f
   * `show_headers` is whether to display the headers for each column. Defaults to `false`.
   * `date_order` is whether to sort dates in ascending chronological order. Defaults to `false`.
 
-== `QuoteHistoryParams` ==
+`QuoteHistoryParams`
+--------------------
 
 Builds a text string for use in [#QuoteHistory =QuoteHistory()] designating which values you would like returned.
 
-{{{
+```
 =QuoteHistoryParams(date, open, high, low, close, volume, adj_close)
 
 // Returns the appropriate text string for use in =QuoteHistory(),
 // such that values for date, close and volume will be returned
 =QuoteHistoryParams(true, , , , true, true)
-}}}
+```
 
   * `date` is whether you wish to return the date.
   * `open` is whether you wish to return the day's opening price.
@@ -310,22 +327,25 @@ Builds a text string for use in [#QuoteHistory =QuoteHistory()] designating whic
   * `adj_close` is whether you wish to return the day's closing price.
 
 
-== `YahooHistory` ==
+`YahooHistory`
+--------------
 
 Same as [#QuoteHistory QuoteHistory] with the `source` argument equal to `"yahoo"`.
 
-== `GoogleHistory` ==
+`GoogleHistory`
+---------------
 
 Same as [#QuoteHistory QuoteHistory] with the `source` argument equal to `"google"`. Note that Google does not contain easily accessible data for things like indexes (such as the S&P 500). If you require such information, I recommend using [#YahooHistory YahooHistory] instead.
 
-== `H15History` ==
+`H15History`
+------------
 
 Returns information from the Fed's [http://www.federalreserve.gov/releases/h15/update/ H.15 Statistical Release].
 
-{{{
+```
 =H15History(instrument_id, frequency)
 =H15History("AAA_NA", "m") // returns a list of dates and yields for Aaa corporate bonds
-}}}
+```
 
   * `instrument_id` is the instrument ID. Go to [http://www.federalreserve.gov/releases/h15/data.htm] and click on one of the data links. The ID is in the URL in the form `H15_[id].txt`.
   * `frequency` is business day (`"b"`), daily (`"d"`), weekly Wednesday (`"ww"`), weekly Thursday (`"wt"`), weekly Friday (`"wf"`), bi-weekly (`"bw"`), monthly (`"m"`) or annual (`"a"`). Not all frequencies are available for all instruments. Defaults to business day (`"b"`)."
@@ -334,16 +354,17 @@ Returns information from the Fed's [http://www.federalreserve.gov/releases/h15/u
 
 Note: Before proceeding, please read the section on [ArrayFormulas array formulas] if you are unfamiliar with their usage.
 
-== `Import` ==
+`Import`
+--------
 
 Returns a horizontal array of values based on a URL and regular expression.
 
-{{{
+```
 =Import(url, pattern, max_length, live_updating, frequency)
 
 // Returns the title of the top story from bloomberg.com
 =Import("http://www.bloomberg.com/", "story_link[^>]+>(.*?)<", 1, false) 
-}}}
+```
 
   * `url` is the full URL of the target website.
   * `pattern` is a [http://www.regular-expressions.info/quickstart.html regular expression pattern] where the first backreference (in parentheses) is the value you wish to retrieve.
@@ -351,20 +372,22 @@ Returns a horizontal array of values based on a URL and regular expression.
   * `live_updating` is whether you want this function to return continuously stream live quotes to the cell.
   * `frequency` is the number of seconds between update requests (if live_updating is `true`). Defaults to `15` seconds.
 
-== `GetWebData` ==
+`GetWebData`
+------------
 
 Same as [#Import Import] with the `live_updating` argument equal to `false`.
 
-== `ImportCSV` ==
+`ImportCSV`
+-----------
 
 Returns an array of values from a CSV.
 
-{{{
+```
 =ImportCSV(url, start_line, reverse, formats)
 
 // Returns a list of market sectors and security types
 =ImportCSV("http://bsym.bloomberg.com/sym/pages/security_type.csv", 1, false, {"string", "string"})
-}}}
+```
 
   * `url` is the URL of the target CSV file.
   * `start_line` is the first line of the CSV to begin parsing (starting with `0`).
@@ -373,14 +396,15 @@ Returns an array of values from a CSV.
 
 #summary Black-Scholes European put/call valuation.
 
-== `BlackScholes` ==
+`BlackScholes`
+--------------
 
 Returns the Black-Scholes European call/put valuation.
 
-{{{
+```
 =BlackScholes(call_put_flag, stock_price, strike_price, time_to_expiry, risk-free rate, dividend_yield, volatility)
 =BlackScholes("c", 60, 65, 0.25, 0.08, 0, 0.3) // returns 2.1334
-}}}
+```
 
   * `call_put_flag` is whether the instrument is a call (`"c"`) or a put (`"p"`).
   * `stock_price` is the current value of the underlying stock.
@@ -390,13 +414,14 @@ Returns the Black-Scholes European call/put valuation.
   * `dividend_yield` is the annual dividend yield.
   * `volatility` is the implied volatility at expiry.
 
-== `GBlackScholes` ==
+`GBlackScholes`
+---------------
 
 Returns the Black-Scholes European call/put valuation.
 
-{{{
+```
 =GBlackScholes(call_put_flag, stock_price, strike_price, time_to_expiry, risk-free rate, cost_of_carry, volatility)
-}}}
+```
 
   * `call_put_flag` is whether the instrument is a call (`"c"`) or a put (`"p"`).
   * `stock_price` is the current value of the underlying stock.
@@ -406,14 +431,15 @@ Returns the Black-Scholes European call/put valuation.
   * `cost_of_carry` is the annualized cost of carry.
   * `volatility` is the implied volatility at expiry.
 
-== `ImpliedVolatility` ==
+`ImpliedVolatility`
+-------------------
 
 Returns the Black-Scholes implied volatility using the Newton-Raphson method.
 
-{{{
+```
 =ImpliedVolatility(call_put_flag, stock_price, strike_price, time_to_expiry, risk-free rate, dividend_yield, price)
 =ImpliedVolatility("c", 60, 65, 0.25, 0.08, 0, 2.1334) // returns 0.3
-}}}
+```
 
   * `call_put_flag` is whether the instrument is a call (`"c"`) or a put (`"p"`).
   * `stock_price` is the current value of the underlying stock.
@@ -423,14 +449,15 @@ Returns the Black-Scholes implied volatility using the Newton-Raphson method.
   * `dividend_yield` is the annual dividend yield.
   * `price` is the Black-Scholes European put/call valuation.
 
-== `Black76` ==
+`Black76`
+---------
 
 Returns the Black-76 valuation for options on futures and forwards.
 
-{{{
+```
 =Black76(call_put_flag, forward, strike_price, time_to_expiry, risk-free_rate, volatility)
 =Black76("c", 100, 98, 1, 0.05, 0.1) // returns 4.7829
-}}}
+```
 
   * `call_put_flag` is whether the instrument is a call (`"c"`) or a put (`"p"`).
   * `forward` is the current forward value.
@@ -440,13 +467,14 @@ Returns the Black-76 valuation for options on futures and forwards.
   * `volatility` is the implied volatility at expiry.
 
 
-== `Swaption` ==
+`Swaption`
+----------
 
 Returns the Black-76 European payer/receiver swaption valuation.
 
-{{{
+```
 =Swaption(pay_rec_flag, tenor, periods, swap_rate, strike_rate, time_to_expiry, risk-free_rate, volatility)
-}}}
+```
 
   * `pay_rec_flag` is whether the instrument is a payer (`"p"`) or a receiver (`"r"`).
   * `tenor` is the tenor of the swap in years.
@@ -459,14 +487,15 @@ Returns the Black-76 European payer/receiver swaption valuation.
 
 #summary One-sentence summary of this page.
 
-== Greeks ==
+Greeks
+------
 
 Returns the options Greek for a particular sensitivity. _(Note: All functions for the Greeks share a common set of arguments, regardless of whether those inputs are used in a particular Greek's calculation.)_
 
-{{{
+```
 =BSDelta(call_put_flag, stock_price, strike_price, time_to_expiry, risk_free_rate, dividend_yield, volatility)
 =BSDelta("c", 60, 65, 0.25, 8%, 0%, 30%) // returns 0.37
-}}}
+```
 
   * `call_put_flag` is whether the instrument is a call (`"c"`) or a put (`"p"`).
   * `stock_price` is the current value of the underlying stock.
@@ -494,13 +523,14 @@ Returns the options Greek for a particular sensitivity. _(Note: All functions fo
 
 #summary Options valuation for American and Bermudan options.
 
-== `American` ==
+`American`
+----------
 
 Returns the Barone-Adesi-Whaley approximation for an American option.
 
-{{{
+```
 =American(call_put_flag, stock_price, strike_price, time_to_expiry, risk-free rate, dividend_yield, volatility)
-}}}
+```
 
   * `call_put_flag` is whether the instrument is a call (`"c"`) or a put (`"p"`).
   * `stock_price` is the current value of the underlying stock.
@@ -510,14 +540,15 @@ Returns the Barone-Adesi-Whaley approximation for an American option.
   * `dividend_yield` is the annual dividend yield.
   * `volatility` is the implied volatility at expiry.
 
-== `BermudanBinomial` ==
+`BermudanBinomial`
+------------------
 
 Returns the binomial valuation for a Bermudan option.
 
-{{{
+```
 =BermudanBinomial(call_put_flag, stock_price, strike_price, time_to_expiry, risk-free rate,
                   dividend_yield, volatility, potential_exercise_times, iterations)
-}}}
+```
 
   * `call_put_flag` is whether the instrument is a call (`"c"`) or a put (`"p"`).
   * `stock_price` is the current value of the underlying stock.
@@ -531,13 +562,14 @@ Returns the binomial valuation for a Bermudan option.
 
   #summary Forward rate agreements valuation
 
-== `FRA` ==
+`FRA`
+-----
 
 Returns the theoretical forward rate between tenor A and tenor B.
 
-{{{
+```
 =FRA(rate_a, ttm_a, rate_a, rate_b, basis)
-}}}
+```
 
   * `rate_a` is the rate through point A.
   * `ttm_a` is time in days to point A.
@@ -545,14 +577,15 @@ Returns the theoretical forward rate between tenor A and tenor B.
   * `ttm_b` is time in days to point B.
   * `basis` is the basis in days (`360`, `365`, etc.).
 
-== `FRAFromFXLong` ==
+`FRAFromFXLong`
+---------------
 
 For short-term contracts with a maturity of less than one year from now, returns the theoretical long forward rate given a currency forward and FX rates.
 
-{{{
+```
 =FRAFromFXLong(fx_spot, fx_swap_long, fx_swap_short, foreign_fra,
                start_days, end_days, domestic_basis, foreign_basis)
-}}}
+```
 
   * `fx_spot` is the foreign exchange spot rate.
   * `fx_swap_long` is the long foreign exchange swap.
@@ -563,14 +596,15 @@ For short-term contracts with a maturity of less than one year from now, returns
   * `domestic_basis` is the domestic basis in days (`360`, `365`, etc.).
   * `foreign_basis` is the foreign basis in days (`360`, `365`, etc.).
 
-== `FRAFromFXShort` ==
+`FRAFromFXShort`
+----------------
 
 For short-term contracts with a maturity of less than one year from now, returns the theoretical short forward rate given a currency forward and FX rates.
 
-{{{
+```
 =FRAFromFXShort(fx_spot, fx_swap_long, fx_swap_short, foreign_fra,
                 start_days, end_days, domestic_basis, foreign_basis)
-}}}
+```
 
   * `fx_spot` is the foreign exchange spot rate.
   * `fx_swap_long` is the long foreign exchange swap.
@@ -612,14 +646,15 @@ term_values is either 1 or 2 term LIBOR values.
 
 Note: Before proceeding, please read the section on [ArrayFormulas array formulas] if you are unfamiliar with their usage.
 
-== `AutoSort` ==
+`AutoSort`
+----------
 
 Automatically sorts an array in Excel when the range it refers to is updated.
 
-{{{
+```
 =AutoSort(range, index, sort_vertical, sort_ascending)
 =AutoSort(A1:B3, 2) // returns an array of values based on cells A1:B3, sorted by the second column
-}}}
+```
 
   * `range` is a list of cells to monitor for changes in value.
   * `index` is the index of the row of column you wish to sort on. Defaults to `1`.
@@ -634,83 +669,89 @@ http://finansu.googlecode.com/hg/img/autosort.gif
 
 These functions are designed to aid in the development of themes, just because I got tired of converting hexadecimal colors using online tools. It supports the conversion of [http://en.wikipedia.org/wiki/Web_colors hexadecimal], [http://en.wikipedia.org/wiki/RGB_color_model RGB] and [http://en.wikipedia.org/wiki/HSL_and_HSV HSV] colors between each other.
 
-== `RGBToHex` ==
+`RGBToHex`
+----------
 
 Converts an RGB color to hexadecimal format.
 
-{{{
+```
 =RGBToHex(red, green, blue)
 =RGBToHex(142, 186, 229) // returns "#8ebae5"
-}}}
+```
 
   * `red` is the level of red in the color (0‒255).
   * `green` is the level of green in the color (0‒255).
   * `blue` is the level of blue in the color (0‒255).
 
-== `RGBToHSV` ==
+`RGBToHSV`
+----------
 
 Converts an RGB color to HSV format.
 
-{{{
+```
 =RGBToHSV(red, green, blue, flag)
 =RGBToHSV(142, 186, 229)      // returns {209.7, 0.38, 0.90}
 =RGBToHSV(142, 186, 229, "h") // returns 209.7
-}}}
+```
 
   * `red` is the level of red in the color (0‒255).
   * `green` is the level of green in the color (0‒255).
   * `blue` is the level of blue in the color (0‒255).
   * `flag` is text describing which HSV value you are requesting. Defaults to a horizontal array containing all three.
 
-== `HexToRGB` ==
+`HexToRGB`
+----------
 
 Converts a hexadecimal color to RGB format.
 
-{{{
+```
 =HexToRGB(hex, flag)
 =HexToRGB("#8ebae5")      // returns {142, 186, 229}
 =HexToRGB("#8ebae5", "r") // returns 142
-}}}
+```
 
   * `hex` is the color in three- or six-digit hexadecimal format.
   * `flag` is text describing which RGB value you are requesting. Defaults to a horizontal array containing all three.
 
-== `HexToHSV` ==
+`HexToHSV`
+----------
 
 Converts a hexadecimal color to HSV format.
 
-{{{
+```
 =HexToHSV(hex, flag)
 =HexToHSV("#8ebae5")        // returns {209.7, 0.38, 0.90}
 =HexToHSV("#8ebae5", "sat") // returns 0.38
-}}}
+```
 
   * `hex` is the color in three- or six-digit hexadecimal format.
   * `flag` is text describing which RGB value you are requesting. Defaults to a horizontal array containing all three.
 
-== `HSVToRGB` ==
+`HSVToRGB`
+----------
 
 Converts an HSV color to RGB format.
 
-{{{
+```
 =HSVToRGB(hue, saturation, value, flag)
 =HSVToRGB(209.6, 0.379, 0.899)          // returns {142, 186, 229}
 =HSVToRGB(209.6, 0.379, 0.899, "green") // returns 186
-}}}
+```
 
   * `hue` is the level of hue in the color (0‒100%).
   * `saturation` is the level of saturation in the color (0‒100%).
   * `value` is the level of value (or brightness) in the color (0‒360).
   * `flag` is text describing which RGB value you are requesting. Defaults to a horizontal array containing all three.
 
-== `HSVToHex` ==
+`HSVToHex`
+----------
 
 Converts an HSV color to hexadecimal format.
 
-{{{
+```
 =HSVToRGB(hue, saturation, value)
 =HSVToRGB(209.6, 0.379, 0.899) // returns "#8ebae5"
-}}}
+```
 
   * `hue` is the level of hue in the color (0‒100%).
   * `saturation` is the level of saturation in the color (0‒100%).
@@ -718,89 +759,94 @@ Converts an HSV color to hexadecimal format.
 
 #summary Distribution and Density Functions
 
-== Retrieving Security Quotes ==
+Retrieving Security Quotes
+--------------------------
 
-=== `BND` ===
+### `BND`
 
 Returns the bivariate normal distribution function.
 
-{{{
+```
 =BND(x, y, rho)
-}}}
+```
 
-=== `CND` ===
+### `CND`
 
 Returns the standard normal cumulative distribution (has a mean of zero and a standard deviation of one).
 
-{{{
+```
 =CND(z)
 =CND(0.5) // returns 0.6915
-}}}
+```
 
   * `z` is the value for which you want the distribution.
 
-=== `CNDEV` ===
+### `CNDEV`
 
 Returns the inverse cumulative normal distribution function.
 
-{{{
+```
 =CNDEV(U)
 =CNDEV(0.5) // returns 0
-}}}
+```
 
   * `U` is the value for which you want the distribution.
 
-=== `ND` ===
+### `ND`
 
 Returns the normal distribution function.
 
-{{{
+```
 =ND(x)
 =ND(0.5) // returns 0.3521
-}}}
+```
 
   * `x` is the value for which you want the distribution.
 
-=== `PDF` ===
+### `PDF`
 
 Returns the probability density function.
 
-{{{
+```
 =PDF(z)
 =PDF(0.5) // returns 0.3521
-}}}
+```
 
 * `z` is the value for which you want the distribution.
 
 #summary Functions for retrieving version information.
 
-== `LatestVersion` ==
+`LatestVersion`
+---------------
 
 Retrieves the version number for the latest version of !FinAnSu available on the [http://code.google.com/p/finansu/ project home page].
 
-{{{
+```
 =LatestVersion() // returns a version number such as "1.0.1"
-}}}
+```
 
-== `CurrentVersion` ==
+`CurrentVersion`
+----------------
 
 Returns the currently installed version number for !FinAnSu.
 
-{{{
+```
 =CurrentVersion() // returns a version number such as "1.0.1"
-}}}
+```
 
-== `UpdateAvailable` ==
+`UpdateAvailable`
+-----------------
 
 Returns whether an update exists for !FinAnSu.
 
-{{{
+```
 =UpdateAvailable() // returns TRUE or FALSE
-}}}
+```
 
 #summary Currency Formats
 
-== Currency Formats ==
+Currency Formats
+----------------
 
 The `Currency` drop-down in the `Formatting` group of the Excel Ribbon will format cells in accounting format with the appropriate currency symbol and decimal places.
 
@@ -819,23 +865,27 @@ The `Currency` drop-down in the `Formatting` group of the Excel Ribbon will form
 
 #summary Layout formats.
 
-== `Accounting Underline` ==
+`Accounting Underline`
+----------------------
 
 Formats a cell with a single accounting underline.
 
-== `Center Across Selection` ==
+`Center Across Selection`
+-------------------------
 
 Centers a cell across the selected range.
 
 #summary Credits for FinAnSu.
 
-== ExcelDNA ==
+ExcelDNA
+--------
 
 This project depends on [http://exceldna.codeplex.com/ Excel-Dna], a very nifty tool which lets you utilize modern programming languages in Excel without the headache of [http://en.wikipedia.org/wiki/Visual_Studio_Tools_for_Office VSTO].
 
 #summary FinAnSu's license information.
 
-== MIT License ==
+MIT License
+-----------
 
 A [http://code.google.com/p/finansu/source/browse/license.txt copy of this license] is included in the source code.
 
