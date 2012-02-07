@@ -1,6 +1,7 @@
 ---
 layout: default
 title: FinAnSu - Credits & Licensing
+description: FinAnSu credits and license information
 ---
 
 Credits
