@@ -55,7 +55,10 @@ ol, ul {
 a[name] {
   color: #000000 !important;
 }
-h1 a[name], h2 a[name] {
+h1 a[name] {
+  color: #393939 !important;
+}
+h2 a[name] {
   color: #333333 !important;
 }
 a[name]:hover {
