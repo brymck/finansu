@@ -60,6 +60,11 @@ The add-in is in its development stages, but it currently offers:
     layout options](http://brymck.github.com/finansu/macro#layout) that aren't
     easily accessible in Excel
 
+In Action
+---------
+
+![FinAnSu in action](http://brymck.github.com/finansu/img/quote.gif)
+
 Requirements
 ------------
 
@@ -78,8 +83,11 @@ Installation
 2. Unzip it to a temporary directory
 3. Run the `install.bat` script
 
-Development
------------
+For more detailed instructions, see the [install
+documentation](http://brymck.github.com/finansu/install).
+
+Development Dependencies
+------------------------
 
 This project has the following dependencies (that don't come bundled with the repo):
 
@@ -98,8 +106,3 @@ This project has the following dependencies (that don't come bundled with the re
 6. Optionally, the [File
    utility](http://gnuwin32.sourceforge.net/packages/file.htm) from GnuWin32,   
    again somewhere on your `%Path%`.                                            
-
-In Action
----------
-
-![FinAnSu in action](http://brymck.github.com/finansu/img/quote.gif)
