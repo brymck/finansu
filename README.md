@@ -13,5 +13,4 @@ OS-dependent (in fact, I'm doing everything in OSX).
     git clone git://github.com/brymck/finansu.git
     git checkout -b gh-pages remotes/origin/gh-pages
     bundle update
-    jekyll
-    open _site/index.html
+    rake build
