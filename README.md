@@ -95,8 +95,9 @@ This project has the following dependencies (that don't come bundled with the re
 5. [NUnit](http://www.nunit.org/index.php?p=download) if you plan to run any
    tests. And if you do, make certain that `nunit-console.exe` can be found on
    the system `%Path%`.
-6. The [File utility](http://gnuwin32.sourceforge.net/packages/file.htm) from
-   GnuWin32, again somewhere on your `%Path%`.
+6. Optionally, the [File
+   utility](http://gnuwin32.sourceforge.net/packages/file.htm) from GnuWin32,   
+   again somewhere on your `%Path%`.                                            
 
 In Action
 ---------
