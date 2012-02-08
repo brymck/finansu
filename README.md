@@ -60,10 +60,13 @@ The add-in is in its development stages, but it currently offers:
     layout options](http://brymck.github.com/finansu/macro#layout) that aren't
     easily accessible in Excel
 
-In Action
----------
+This is what it looks like in action:
 
 ![FinAnSu in action](http://brymck.github.com/finansu/img/quote.gif)
+
+Interested? Check out [the download
+page](https://github.com/brymck/finansu/downloads) and the fairly comprehensive
+[documentation](http://brymck.github.com/finansu/).
 
 Requirements
 ------------
