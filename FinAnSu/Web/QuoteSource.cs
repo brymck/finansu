@@ -26,22 +26,24 @@ namespace FinAnSu
             private string forceSuffix;
             private string matchPrefix;
             private string matchSuffix;
+            private bool forceInterpret;
             private readonly Regex matchRegex = new Regex("[0-9]");
             private Dictionary<char, string> quoteParams = new Dictionary<char, string>();
             private List<char> historyParams = new List<char>();
 
             public QuoteSource(char abbreviation, string url,
-                string forcePrefix, string forceSuffix, string matchPrefix, string matchSuffix,
+                string forcePrefix, string forceSuffix, bool forceInterpret, string matchPrefix, string matchSuffix,
                 Dictionary<char, string> quoteParams, List<char> historyParams)
             {
                 this.abbreviation = abbreviation;
                 this.url = url;
                 this.forcePrefix = forcePrefix;
                 this.forceSuffix = forceSuffix;
+                this.forceInterpret = forceInterpret;
                 this.matchPrefix = matchPrefix;
                 this.matchSuffix = matchSuffix;
                 this.quoteParams = quoteParams;
-                this.historyParams=historyParams;
+                this.historyParams = historyParams;
             }
 
             public string[] GetQuoteParamsByChars(string paramAbbreviations)
@@ -84,11 +86,11 @@ namespace FinAnSu
 
             public string FullURL(string ticker)
             {
-                return FullURL(ticker, false);
+                return FullURL(ticker, forceInterpret);
             }
-            public string FullURL(string ticker, bool forceInterpret)
+            public string FullURL(string ticker, bool force)
             {
-                return url + FullTicker(ticker, forceInterpret);
+                return url + FullTicker(ticker, force);
             }
 
             #region Properties
@@ -163,22 +165,22 @@ namespace FinAnSu
             /// <summary>Information unique to Bloomberg as a quote source.</summary>
             private static QuoteSource bloomberg = new QuoteSource(
                 'b',
-                "http://www.bloomberg.com/apps/quote?ticker=",
-                "", ":US", "", ":IND",
+                "http://www.bloomberg.com/quote/",
+                "", ":US", true, "", ":IND",
                 new Dictionary<char, string> {
-                    {'p', "(?:PRICE|VALUE)\\: <span class=\"amount\">([0-9.,NA-]{1,})"},
-                    {'x', "Change</td>\n<td class=\"value[^>]+>([0-9.,NA-]{1,})"},
-                    {'%', "Change</td>\n<td class=\"value[^>]+>[0-9.,NA-]{1,} \\(([0-9.,\\-NA]{1,})\\%"},
+                    {'p', "\" price\">\\s*\n\\s*([0-9.,NA-]{1,})"},
+                    {'x', "trending_[^>]{1,}>([0-9.,NA-]{1,})"},
+                    {'%', "trending_[^>]{1,}>[0-9.,NA-]{1,}\\s*<span>([0-9.,NA-]{1,})"},
                     {'d', "\"date\">(.*?)<"},
                     {'t', "\"time\">(.*?)<"},
-                    {'b', "Bid</td>\\n<td class=\"value[^>]+>([0-9.,NA-]{1,})"},
-                    {'a', "Ask</td>\\n<td class=\"value[^>]+>([0-9.,NA-]{1,})"},
-                    {'o', "Open</td>\\n<td class=\"value[^>]+>([0-9.,NA-]{1,})"},
-                    {'h', "High</td>\\n<td class=\"value[^>]+>([0-9.,NA-]{1,})"},
-                    {'l', "Low</td>\\n<td class=\"value[^>]+>([0-9.,NA-]{1,})"},
-                    {'v', "Volume</td>\\n<td class=\"value[^>]+>([0-9.,NA-]{1,})"},
-                    {'M', "Market Cap[^<]+</td>\\n<td class=\"value\">([0-9.,NA-]{1,})"},     // Market capitalization
-                    {'P', "Price/Earnings[^<]+</td>\\n<td class=\"value\">([0-9.,NA-]{1,})"}, // P/E
+                    {'b', "Bid:</th>\\n\\s*<td[^>]*>([0-9.,NA-]{1,})"},
+                    {'a', "Ask:</th>\\n\\s*<td[^>]*>([0-9.,NA-]{1,})"},
+                    {'o', "Open:</th>\\n\\s*<td[^>]*>([0-9.,NA-]{1,})"},
+                    {'h', "Day's Range:</th>\\n\\s*<td[^>]*>[0-9.,NA-]{1,} - ([0-9.,NA-]{1,})"},
+                    {'l', "Day's Range:</th>\\n\\s*<td[^>]*>([0-9.,NA-]{1,})"},
+                    {'v', "Volume:</th>\\n\\s*<td[^>]*>([0-9.,NA-]{1,})"},
+                    {'M', "Market Cap[^<]+</th>\\n\\s*<td[^>]+>([0-9.,NA-]{1,})"},  // Market capitalization
+                    {'P', "Price/Earnings[^<]+</td>\\n<td[^>]+>([0-9.,NA-]{1,})"},  // P/E
                 },
                 null
             );
@@ -187,7 +189,7 @@ namespace FinAnSu
             private static QuoteSource google = new QuoteSource(
                 'g',
                 "http://www.google.com/ig/api?stock=",
-                "NYSE:", "", "", "",
+                "NYSE:", "", false, "", "",
                 new Dictionary<char, string> {
                     {'p', "<last data\\=\"([0-9.-]*)\""},
                     {'x', "<change data\\=\"([0-9.-]*)\""},
@@ -213,11 +215,11 @@ namespace FinAnSu
             private static QuoteSource yahoo = new QuoteSource(
                 'y',
                 "http://finance.yahoo.com/q?s=",
-                "", "", "", ".CME",
+                "", "", false, "", ".CME",
                 new Dictionary<char, string> {
-                    {'p', "yfs_l84_[^>]+>([0-9,.-]{1,})"},
-                    {'x', "><span id=\"yfs_c[16]0_.*?(?:\n[\\s\\w\\-]*\n[\\s\\\">\\(]*?)?([0-9.,-]{1,})"},
-                    {'%', "yfs_p[24]0_.*?(?:\n[\\s\\w\\-]*\n[\\s\\\">\\(]*?)?([0-9.,-]{1,})%\\)(?:</span>|</b></span></td>)"},
+                    {'p', "yfs_l(?:10|84)_[^>]+>([0-9,.-]{1,})"},
+                    {'x', "><span id=\"yfs_c(?:6[034]|10)_.*?(?:\n[\\s\\w\\-]*\n[\\s\\\">\\(]*?)?([0-9.,-]{1,})"},
+                    {'%', "yfs_p(?:4[034]|20)_.*?(?:\n[\\s\\w\\-]*\n[\\s\\\">\\(]*?)?([0-9.,-]{1,})%\\)(?:</span>|</b></span></td>)"},
                     {'d', "<span id=\"yfs_market_time\">.*?, (.*?20[0-9]{2})"},
                     {'t', "<span id=\"yfs_t54_[^>]+>(.*?)<"},
                     {'b', "yfs_b00_[^>]+>([0-9,.-]{1,})"},
