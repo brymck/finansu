@@ -51,6 +51,7 @@
     <Compile Include="FinMath\PayoffsTest.cs" />
     <Compile Include="MainTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FinAnSu\FinAnSu.csproj">
