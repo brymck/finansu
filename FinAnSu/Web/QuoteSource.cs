@@ -168,7 +168,7 @@ namespace FinAnSu
                 "http://www.bloomberg.com/quote/",
                 "", ":US", true, "", ":IND",
                 new Dictionary<char, string> {
-                    {'p', "\" price\">\\s*\n\\s*([0-9.,NA-]{1,})"},
+                    {'p', " price\">\\s*\n\\s*([0-9.,NA-]{1,})"},
                     {'x', "trending_[^>]{1,}>([0-9.,NA-]{1,})"},
                     {'%', "trending_[^>]{1,}>[0-9.,NA-]{1,}\\s*<span>([0-9.,NA-]{1,})"},
                     {'d', "\"date\">(.*?)<"},
