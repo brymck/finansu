@@ -176,8 +176,8 @@ namespace FinAnSu
                     {'b', "Bid:</th>\\n\\s*<td[^>]*>([0-9.,NA-]{1,})"},
                     {'a', "Ask:</th>\\n\\s*<td[^>]*>([0-9.,NA-]{1,})"},
                     {'o', "Open:</th>\\n\\s*<td[^>]*>([0-9.,NA-]{1,})"},
-                    {'h', "Day's Range:</th>\\n\\s*<td[^>]*>[0-9.,NA-]{1,} - ([0-9.,NA-]{1,})"},
-                    {'l', "Day's Range:</th>\\n\\s*<td[^>]*>([0-9.,NA-]{1,})"},
+                    {'h', "Day(?:'s)? Range:</th>\\n\\s*<td[^>]*>[0-9.,NA-]{1,} - ([0-9.,NA-]{1,})"},
+                    {'l', "Day(?:'s)? Range:</th>\\n\\s*<td[^>]*>([0-9.,NA-]{1,})"},
                     {'v', "Volume:</th>\\n\\s*<td[^>]*>([0-9.,NA-]{1,})"},
                     {'M', "Market Cap[^<]+</th>\\n\\s*<td[^>]+>([0-9.,NA-]{1,})"},  // Market capitalization
                     {'P', "Price/Earnings[^<]+</td>\\n<td[^>]+>([0-9.,NA-]{1,})"},  // P/E
