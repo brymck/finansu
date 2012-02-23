@@ -71,6 +71,10 @@ namespace FinAnSu
                         if (decimal.TryParse(matches[row - (hasHeaders ? 1 : 0)].Groups[1].Value, out temp))
                         {
                             result[row, col] = temp;
+                            if (url.Contains("bloomberg.com") && matches[row - (hasHeaders ? 1 : 0)].Groups[0].Value.Contains("down"))
+                            {
+                                result[row, col] = -temp;
+                            }
                         }
                         else
                         {
