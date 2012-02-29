@@ -192,8 +192,8 @@ namespace FinAnSu
                 "NYSE:", "", false, "", "",
                 new Dictionary<char, string> {
                     {'p', "<last data\\=\"([0-9.-]*)\""},
-                    {'x', "<change data\\=\"([0-9.-]*)\""},
-                    {'%', "<perc_change data\\=\"([0-9.-]*)\""},
+                    {'x', "<change data\\=\"([0-9.+-]*)\""},
+                    {'%', "<perc_change data\\=\"([0-9.+-]*)\""},
                     {'d', "<trade_date_utc data\\=\"([0-9.-]*)\""},
                     {'t', "<trade_date_utc data\\=\"([0-9.-]*)\""},
                     {'o', "<open data\\=\"([0-9.-]*)\""},
