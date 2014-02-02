@@ -168,7 +168,7 @@ namespace FinAnSu
                 "http://www.bloomberg.com/quote/",
                 "", ":US", true, "", ":IND",
                 new Dictionary<char, string> {
-                    {'p', " price\">\\s*\n\\s*([0-9.,NA-]{1,})"},
+                    {'p', "<span[^>]{1,}price\">\\n?\\s*([0-9.,NA-]{1,})"},
                     {'x', "trending_[^>]{1,}>([0-9.,NA-]{1,})"},
                     {'%', "trending_[^>]{1,}>[0-9.,NA-]{1,}\\s*<span>([0-9.,NA-]{1,})"},
                     {'d', "\"date\">(.*?)<"},
@@ -188,17 +188,17 @@ namespace FinAnSu
             /// <summary>Information unique to Google Finance as a quote source.</summary>
             private static QuoteSource google = new QuoteSource(
                 'g',
-                "http://www.google.com/ig/api?stock=",
+                "http://www.google.com/finance?q=",
                 "NYSE:", "", false, "", "",
                 new Dictionary<char, string> {
-                    {'p', "<last data\\=\"([0-9.-]*)\""},
-                    {'x', "<change data\\=\"([0-9.+-]*)\""},
+                    {'p', "<span (?:id=\"ref_[0-9]{0,}_l\"|class=bld)>([0-9,.]+)"},
+                    {'x', "<span class=\"(?:chg?r?|ch chg bld)\" id=\"?ref_[0-9]{0,}_c\"?>{1,}?(-?[0-9,.]{0,})<"},
                     {'%', "<perc_change data\\=\"([0-9.+-]*)\""},
                     {'d', "<trade_date_utc data\\=\"([0-9.-]*)\""},
                     {'t', "<trade_date_utc data\\=\"([0-9.-]*)\""},
-                    {'o', "<open data\\=\"([0-9.-]*)\""},
-                    {'h', "<high data\\=\"([0-9.-]*)\""},
-                    {'l', "<low data\\=\"([0-9.-]*)\""},
+                    {'o', "Open\\n</td>\\n<td[^>]+>(.{0,})"},
+                    {'h', "Range\\n</td>\\n<td[^>]+>.{0,} - (.{0,})"},
+                    {'l', "Range\\n</td>\\n<td[^>]+>(.{0,})"},
                     {'v', "<volume data\\=\"([0-9.-]*)\""},
                     {'M', "<market_cap data\\=\"([0-9.-]*)\""},
                     {'P', "<volume data\\=\"([0-9.-]*)\""},
