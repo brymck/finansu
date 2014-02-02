@@ -64,8 +64,8 @@ This is what it looks like in action:
 
 ![FinAnSu in action](http://brymck.github.com/finansu/img/quote.gif)
 
-Interested? Check out [the download
-page](https://github.com/brymck/finansu/downloads) and the fairly comprehensive
+Interested? Check out [the releases
+page](https://github.com/brymck/finansu/releases) and the fairly comprehensive
 [documentation](http://brymck.github.com/finansu/).
 
 Requirements
