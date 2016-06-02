@@ -1,3 +1,18 @@
+**_This package is no longer actively maintained._**
+
+I'm pleasantly surprised by the positive feedback this project has received
+over the years, but over those years I've come to lack the time, need and
+Windows dev setup to pay appropriate attention. This repo will remain here,
+although over time I expect the changes to Office, Windows and financial site
+structures to cause many functions to stop working.
+
+That said, nothing I've done here is particularly complex. Ultimately, I'm just
+parsing site HTML and returning data. If anything, the code itself is overly
+verbose and lacks appropriate testing. It's a little embarrassing. I hope
+someone can pick up what meager work I've done here and run with it.
+
+---
+
 FinAnSu
 =======
 
